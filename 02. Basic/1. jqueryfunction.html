@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. jquery 함수 이해하기</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        console.log('1. jQuery:', jQuery);
+        console.log('2. typeof jQuery:', typeof jQuery);
+        console.log('3. jQuery instanceof Function:', jQuery instanceof Function);
+
+
+        console.log('4. $:', $);
+        console.log('5. typeof $:', typeof $);
+        console.log('6. $ instanceof Function:', $ instanceof Function);
+
+
+        console.log('7. jQuery == $:', jQuery == $);
+        console.log('8. jQuery === $:', jQuery === $);
+
+
+        $(document).ready(function (params) {
+            console.log('- document.onload event handler invoked.');
+
+            console.log('- params:', params, params === jQuery, params === $);
+            console.log(window.jQuery === window.$, window.$ === jQuery, jQuery === $);
+
+        }); //.jq
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

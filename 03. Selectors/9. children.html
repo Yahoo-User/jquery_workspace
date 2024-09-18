@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. 자식요소(children) 선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            console.log('- document ready.');
+
+
+            // (1) $(selector1 > selector2)
+            $('#wrap > h1').
+                css('border', '5px ridge red');
+
+            var children = $('#wrap').children();
+            console.log('\t+ children:', children, children instanceof $);
+
+
+            // (2) $(selector1).children(selector2)
+            $('#wrap').
+                children('p').
+                css('border', '5px dashed blue');
+
+
+            // (3) $(selector).children()
+            $('#wrap > section').
+                children().
+                css({
+                    // 'background-color': '#ff0',
+                    border: '5px outset purple'
+                });
+
+        }); //.jq
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>인접관계 선택자</h1>
+        <p>내용1</p>
+        <section>
+            <h1>자식요소 선택자</h1>
+            <p>내용2</p>
+        </section>
+    </div>
+</body>
+
+</html>

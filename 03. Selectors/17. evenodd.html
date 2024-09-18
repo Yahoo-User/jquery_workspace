@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17. 위치탐색 - even/odd 선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            console.log('- document ready.');
+
+            // even (짝수 인덱스만 -> 홀수번째 요소만) 선택자
+            $('#menu li:even').css('border', '5px outset blue');
+
+            // odd (홀수 인덱스만 -> 짝수번째 요소만) 선택자
+            $('#menu li:odd').css('border', '5px dotted red');
+        }); //.jq
+
+    </script>
+</head>
+
+<body>
+    <h1>탐색 선택자</h1>
+
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>
+
+</html>
