@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css03</title>
+
+    <style>
+        body * {
+            margin: 5px;
+            padding: 5px;
+
+            border: 1px solid gray;
+        }
+
+        * {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <style>
+        .class2 {
+            border-width: thick;
+        }
+
+        .u_bgpurple {
+            background-color: purple;
+            color: white;
+        }
+
+        .u_dotted {
+            border-style: dotted;
+        }
+    </style>
+
+    <script>
+
+        //----------------------------------------------------------//
+        // 제이쿼리 문서시작 이벤트 핸들러 선언
+        //----------------------------------------------------------//
+
+        $(function () {
+            console.log('onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            /* 제이쿼리 스타일 클래스 메소드 활용 예제: (1), (1)(2), (1)(2)(3) 순서대로 연속실행할 것 */
+
+            $('span:first').addClass('u_bgpurple')              // (1)
+
+            // $('p:eq(1)').                                       // (2)
+            //     removeClass('class2').
+            //     addClass('u_bgpurple')
+
+            // $('span').toggleClass('u_bgpurple')                 // (3)
+
+        })  // jq
+
+    </script>
+</head>
+
+<body>
+
+    <section data-role="page">
+
+        <section data-role="header" data-theme="e">
+            <h1>jQuery 선택자</h1>
+        </section>
+
+        <div id="div0">div0
+
+            <div id="div1">div1
+                <span id="span1">span1</span>
+                <span id="span2">span2</span>
+                <span id="span3">span3</span>
+                <span>span4</span>
+            </div>
+
+            <div id="div2">div2
+                <p id="p1">p1</p>
+                <p id="p2" class="class1 class2">p2 class1 class2</p>
+                <p id="p3" class="class1">p3 class1</p>
+                <p id="p4">p4</p>
+            </div>
+
+            <div id="div3" class="class2">div3 class2</div>
+
+            <p>p</p>
+            <p></p>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

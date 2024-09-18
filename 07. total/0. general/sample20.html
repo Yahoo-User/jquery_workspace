@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample20</title>
+
+    <style>
+
+        div {
+            margin: 0 auto;
+        }
+
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        // 이미지에 fade 효과주기 by fadeOut(), fadeIn(), fadeToggle(), fadeTo() methods
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            // To set some mouse event handlers
+
+            $('#out').click(function (e) {
+                console.log('\t+ onclick event handler for #out invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t - this:', this)
+
+                $('img').fadeOut()
+
+                // $('img').fadeOut('slow')    // slow, fast, middle
+                // $('img').fadeOut('fast')
+                // $('img').fadeOut('middle')
+            })  // onclick
+
+
+            $('#in').click(function (e) {
+                console.log('\t+ onclick event handler for #in invoked.')
+
+                $('img').fadeIn()
+
+                // $('img').fadeIn('slow')
+                // $('img').fadeIn('middle')
+                // $('img').fadeIn('fast')
+            })  // onclick
+
+
+            $('#toggle').click(function (e) {
+                console.log('\t+ onclick event handler for #toggle invoked.')
+
+                $('img').fadeToggle()
+                // $('img').fadeToggle('slow')
+                // $('img').fadeToggle('middle')
+                // $('img').fadeToggle('fast')
+            })  // onclick
+
+
+            $('#to50').click(function (e) {
+                console.log('\t+ onclick event handler for #to50 invoked.')
+
+                // 불투명도 50%로 설정
+                // $('img').fadeTo('slow', .5)
+                // $('img').fadeTo('middle', .5)
+                $('img').fadeTo('fast', .5)
+            })  // onclick
+
+
+            $('#to10').click(function (e) {
+                console.log('\t+ onclick event handler for #to10 invoked.')
+
+                // 불투명도 10%로 설정
+                // $('img').fadeTo('slow', .1)
+                // $('img').fadeTo('middle', .1)
+                $('img').fadeTo('fast', .1)
+            })  // onclick
+
+
+            $('#to100').click(function (e) {
+                console.log('\t+ onclick event handler for #to100 invoked.')
+
+                // 불투명도 100%로 설정
+                $('img').fadeTo('slow', 1.)
+                // $('img').fadeTo('middle', 1.)
+                // $('img').fadeTo('fast', 1.)
+            })  // onclick
+
+
+        })  // jq
+
+
+    </script>
+</head>
+<body>
+
+    <div>
+
+        <button id="out">fadeOut</button>
+        <button id="in">fadeIn</button>
+        <button id="toggle">fadeToggle</button>
+        <button id="to50">opacity 50%</button>
+        <button id="to10">opacity 90%</button>
+        <button id="to100">opacity 0%</button>
+
+        <p></p>
+
+        <img src="https://picsum.photos/600/400" name="pic1">
+
+    </div>
+    
+</body>
+</html>

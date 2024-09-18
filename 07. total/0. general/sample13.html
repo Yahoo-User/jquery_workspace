@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample13</title>
+
+    <style>
+        .red {
+            color: red;
+            border: 1px solid blue;
+        }
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        // 특정요소에 CSS 스타일을 적용하거나 해제하는 과정을 반복수행할 때에는, toggleClass() 메소드 사용 예제
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            // To set a mouse event handler
+            $('button').click(function (e) {
+                console.log('\t+ onclick event handler for button invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                $('h1, h2, p:first, div').toggleClass('red')
+            })  // onclick
+
+        })  // jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>HTML5</h1>
+    <h2>CSS3</h2>
+    <p>자바스크립트</p>
+    <div>제이쿼리</div>
+
+    <p></p>
+
+    <button>CSS 적용/해제(toggle)</button>
+
+</body>
+
+</html>

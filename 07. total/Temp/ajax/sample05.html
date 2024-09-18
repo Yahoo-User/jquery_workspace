@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample05</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.clear();
+            console.log('- jquery started ......');
+
+
+            let jqXHR = $.ajax({
+
+                async: true,
+                cache: false,
+                timeout: 500,
+                crossDomain: true,
+
+
+                data: 'name=Yoseph&age=23',
+                contentType: 'application/x-www-form-urlencoded',
+
+                type: 'get',
+                url: './persons.xml',
+                dataType: 'xml',
+
+
+                beforeSend: function (jqXHR, settings) {
+                    console.log('\t+ beforeSend invoked.');
+                    
+
+                },
+
+
+                success: function (data, textStatus, jqXHR) {
+                    console.log('\t+ success invoked.');
+
+                    let persons = $(data).find('person');
+                    if(persons.length > 0) {
+                        let table = $('<table border="1"/>');
+
+
+                        $.each(persons, function (index, person) {
+                            let tr = $('<tr/>');
+
+
+                            let id          = $(person).find('id').text();
+                            let first_name  = $(person).find('first_name').text();
+                            let last_name   = $(person).find('last_name').text();
+                            let email       = $(person).find('email').text();
+                            let gender      = $(person).find('gender').text();
+                            let ip_address  = $(person).find('ip_address').text();
+
+                            $('<td/>').text(id).appendTo(tr);
+                            $('<td/>').text(first_name).appendTo(tr);
+                            $('<td/>').text(last_name).appendTo(tr);
+                            $('<td/>').text(email).appendTo(tr);
+                            $('<td/>').text(gender).appendTo(tr);
+                            $('<td/>').text(ip_address).appendTo(tr);
+
+
+                            table.append(tr);
+                        }); // $.each
+
+
+                        $('#wrapper').append(table);
+                    } // if
+
+                },
+
+
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('\t+ error invoked.');
+                    
+                },
+
+
+                complete: function (jqXHR, textStatus) {
+                    console.log('\t+ complete invoked.');
+
+                    
+                }
+
+            }); // $.ajax
+
+
+            jqXHR.done(function () {
+                console.log('- ajax done.');
+
+
+            }); // done
+            
+        }); // jq
+
+    </script>
+</head>
+
+<body>
+
+</body>
+    <div id="wrapper"></div>
+</html>

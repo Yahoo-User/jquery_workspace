@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample03</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+</head>
+
+<body>
+
+    <h3>sample03.html</h3>
+
+
+    <script>
+
+        // Built-in document object
+        console.log('1. document:', document, ', typeof document:', typeof document)
+        console.log('\t+ document.head:', document.head, ', typeof document.head:', typeof document.head)
+        console.log('\t\t+ document.head.title:', document.head.getElementsByTagName('title'))
+        console.log('\t\t+ document.head.meta:', document.head.getElementsByTagName('meta'))
+        console.log('\t\t+ document.head.script:', document.head.getElementsByTagName('script'))
+
+        console.log('\t+ document.body:', document.body, ', typeof document.body:', typeof document.body)
+        console.log('\t\t+ document.body.h3:', document.body.getElementsByTagName('h3'))
+        console.log('\t\t+ document.body.script:', document.body.getElementsByTagName('script'))
+
+
+        // jQuery object including built-in document object
+        var jqDoc = $(document)
+        console.log('3. jqDoc:', jqDoc, ', typeof jqDoc:', typeof jqDoc)
+
+        var jqWin = $(window)
+        console.log('4. jqWin:', jqWin, ', typeof jqWin:', typeof jqWin)
+
+    </script>
+
+</body>
+
+</html>

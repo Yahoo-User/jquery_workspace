@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample15</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        // 특정요소에 여러 CSS 속성을 동시에 변경하는 예제 by css() 메소드
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            // To set a mouse event handler
+            $('button').click(function (e) {
+                console.log('\t+ onclick event handler for button invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+
+                $('p').css({
+                    'background-color': 'yellow',
+                    'font-size': '200%'
+                })
+            })  // onclick
+        })  // jq
+
+    </script>
+</head>
+
+<body>
+
+    <p>김길동</p>
+    <div>02-123-4567</div>
+    <p>이길동</p>
+    <div>042-567-2929</div>
+    <p>홍길동</p>
+    <div>051-278-9485</div>
+
+    <br />
+
+    <button>이름강조</button>
+
+</body>
+
+</html>

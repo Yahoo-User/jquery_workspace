@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample23</title>
+
+    <style>
+
+        .moving img {
+            cursor: pointer;
+            position: relative;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        // 제이쿼리 기반 사용자 정의 함수 작성 예제
+
+        function move(obj, time) {
+            console.log('>>> f move(obj, time) invoked.')
+
+            $(obj).stop().animate({
+                left: 350,
+                top: 0,
+            }, time)
+
+        }   // move
+
+
+        function back(css) {
+            console.log('>>> f back(bss) invoked.')
+            
+            $(css).stop().animate({
+                left: 0,
+                top: 0
+            })
+
+        }   // back
+
+
+    </script>
+</head>
+<body>
+
+    <div class="init">
+        <button type="button" onclick="back('.moving img')">초기화 상태</button>
+    </div>
+
+    <p></p>
+
+    <div class="moving">
+        <img src="https://picsum.photos/200/200" onclick="move(this, 6000)"><br/>
+        <img src="https://picsum.photos/id/125/200/200" onclick="move(this, 3000)"><br/>
+        <img src="https://picsum.photos/id/227/200/200" onclick="move(this, 1000)"><br/>
+    </div>
+    
+</body>
+</html>

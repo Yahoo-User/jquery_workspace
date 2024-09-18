@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample10</title>
+
+    <style>
+
+        div.out {
+            width: 200px;
+            height: 100px;
+            padding: 5px;
+
+            border: 1px dotted #000000;
+            background-color: rgb(5, 5, 87);
+            color: white;
+
+            text-align: center;
+        }
+
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        var count = 0
+
+        // 특정 요소에 마우스 이벤트(onmouseenter, onmouseout) 설정 예제
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+
+
+            // onmouseenter event handler 설정
+            $('div.out').mouseenter(function (e) {
+                console.log('\t+ onmouseenter event handler for div.out invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                $('p:first').text('마우스 포인터 들어옴')
+                // $('p:first').html('마우스 포인터<br/>들어옴')
+                $('p:last').text(++count)
+            })  // onmouseenter for div.out
+
+
+            // onmouseout event handler 설정
+            $('div.out').mouseout(function (e) {
+                console.log('\t+ onmouseout event handler for div.out invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                $('p:first').text('마우스 포인터 나감')
+                // $('p:first').html('마우스 포인터<br/>들어옴')
+            })  // onmouseout for div.out
+
+        })  // jq
+
+    </script>
+</head>
+
+<body>
+
+    <div class="out">
+        <p>마우스 이벤트<br />알아보기</p>
+        <p>0</p>
+    </div>
+
+</body>
+
+</html>

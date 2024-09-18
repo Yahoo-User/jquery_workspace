@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample21</title>
+
+    <style>
+
+        #slide, #panel, #flip {
+            padding: 5px;
+
+            text-align: center;
+
+            background-color: #e5eecc;
+            border: 1px solid #c3c3c3;
+        }
+
+        #panel {
+            padding: 70px;
+
+            display: none;
+
+            background-color: #d16b18;
+            color: white;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+
+        // Sliding 기법 적용 예제
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            // To set mouse event handlers
+
+            $('#panel').click(function (e) {
+                console.log('\t+ onclick event handler for #panel invoked.')
+
+
+                $('#panel').slideUp()
+                // $('#panel').slideUp('fast')
+                // $('#panel').slideUp('middle')
+                // $('#panel').slideUp('slow')
+                // $('#panel').slideUp(3000)           // 3000ms
+            })  // onclick
+
+
+            $('#slide').click(function (e) {
+                console.log('\t+ onclick event handler for #slide invoked.')
+
+
+                $('#panel').slideDown()
+                // $('#panel').slideDown('fast')
+                // $('#panel').slideDown('middle')
+                // $('#panel').slideDown('slow')
+                // $('#panel').slideDown(5000);        // 5000ms
+            })  // onclick
+
+
+            $('#flip').click(function (e) {
+                console.log('\t+ onclick event handler for #flip invoked.')
+
+
+                $('#panel').slideToggle()
+                // $('#panel').slideToggle('fast')
+                // $('#panel').slideToggle('middle')
+                // $('#panel').slideToggle('slow')
+                // $('#panel').slideToggle(5000);        // 5000ms
+            })  // onclick
+
+
+            $('#stop').click(function (e) {
+                console.log('\t+ onclick event handler for #stop invoked.')
+
+
+                $('#panel').stop()
+            })  // onclick
+
+        })  // jq
+
+    </script>
+</head>
+<body>
+
+    <div id="slide">[오늘의 공지사항]</div>
+    <div id="panel">
+        오늘은 jQuery 프로그램을 학습니다.<br/>
+        예제를 작성한 후 실행해보세요
+
+        <p/>
+
+        <img src="https://picsum.photos/400/200" name="pic1">
+    </div>
+    <div id="flip">Toggle Slide</div>
+    
+    <p></p>
+
+    <button id="stop">Stop sliding</button>
+    
+</body>
+</html>

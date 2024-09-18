@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample19</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        // 이미지 요소를 보여주기/숨기기 및 이의 toggle 효과 예제 by hide(), show(), toggle() methods
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            // To set a mouse event handler
+            $('#hide').click(function (e) {
+                console.log('\t+ onclick event handler for #hide invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                // 지정된 이미지 감추기
+                // $('img').hide()
+                $('img').hide('slow')       // 느리게 감추기
+            })  // onclick
+
+            // To set a mouse event handler
+            $('#show').click(function (e) {
+                console.log('\t+ onclick event handler for #show invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                // 지정된 이미지 보여주기
+                // $('img').show()
+                $('img').show('fast')
+            })  // onclick
+
+            // To set a mouse event handler
+            $('#toggle').click(function (e) {
+                console.log('\t+ onclick event handler for #toggle invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                // 지정된 이미지 숨기기/보여주기 toggle
+                // $('img').toggle()
+                $('img').toggle('slow')
+            })  // onclick
+
+        })  // jq
+
+
+    </script>
+</head>
+
+<body>
+
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+
+    <p></p>
+
+    <img src="https://picsum.photos/600/400" name="pic1">
+
+</body>
+
+</html>

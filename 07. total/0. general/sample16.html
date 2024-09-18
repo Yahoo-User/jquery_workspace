@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample16</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+
+            margin: 5px;
+
+            background-color: red;
+            color: white;
+
+            text-align: center;
+
+            float: left;
+        }
+
+        .box {
+            background-color: blue;
+        }
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        // 박스의 크기와 색상 변경 예제 by addClass(), width(), height(), onclick event
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            var xWidth = 100;       // 지역변수 선언(함수블록 안에서 정의)
+            var yHeight = 100;      // 지역변수 선언(함수블록 안에서 정의)
+
+
+            // To set a mouse event handler
+            $('div').click(function (e) {
+                console.log('\t+ onclick event handler for div invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                // 마우스로 클릭한 박스의 컨텐츠 영역의 가로/세로 길이를 설정하고, 동시에 box 클래스 속성값 설정
+                $(this).width(xWidth).addClass('box')
+                $(this).height(yHeight).addClass('box')
+
+                // 마우스로 동일박스를 클릭할 수록, 가로/세로 길이를 -10씩 줄여나감
+                xWidth -= 10
+                yHeight -= 10
+            })  // onclick
+
+        })  // jq
+
+
+    </script>
+</head>
+
+<body>
+
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+    <div>박스4</div>
+    <div>박스5</div>
+
+</body>
+
+</html>

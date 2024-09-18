@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample06</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        // 단일 이벤트 처리하기
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+
+            $('button').click(function (e) {
+                console.clear(); console.log('\t+ onclick event handler for button invoked.')
+
+                console.log('\t+ e:', e, ', typeof e:', typeof e)               // e == MouseEvent(click)
+                console.log('\t+ this:', this, ', typeof this:', typeof this)
+                console.log('\t+ $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+
+                $('p').hide()
+            })  // onclick
+
+        })  // jq
+
+    </script>
+</head>
+
+<body>
+
+    <p>메시지: 제이쿼리를 공부하고 있습니다</p>
+    <button>메시지 숨기기</button>
+
+</body>
+
+</html>

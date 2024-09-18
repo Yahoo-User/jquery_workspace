@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample05</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        //--------------------------------------------------------------------//
+        // 1. 문서시작 이벤트 핸들러: jQuery(document).ready(function () {...})
+        //--------------------------------------------------------------------//
+
+        // jQuery(document).ready(function onready(p) {
+        //     console.log('>>> jq#1: onready event handler for document(DOM) invoked.')
+
+        //     console.log('\t+ 1. p:', p, ', typeof p:', typeof p)                // p == jQuery or $
+        //     console.log('\t+ 2. this:', this, ', typeof this:', typeof this)
+        //     console.log('\t+ 3. $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+        //     console.log('\t+ 4. p === jQuery:', p === jQuery)
+        //     console.log('\t+ 5. p === $:', p === $)
+
+        // })// jq#1
+
+        //--------------------------------------------------------------------//
+
+        // $(document).ready(function onready(p1, p2) {
+        //     console.log('>>> jq#2: onready event handler for document(DOM) invoked.')
+
+        //     console.log('\t+ 1. p1:', p1, ', p2:', p2)
+        //     console.log('\t+ 2. this:', this, ', typeof this:', typeof this)
+        //     console.log('\t+ 3. $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+        //     console.log('\t+ 4. p1 === jQuery:', p1 === jQuery)
+        //     console.log('\t+ 5. p1 === $:', p1 === $)
+
+        // }) // jq#2
+
+        //--------------------------------------------------------------------//
+
+        // $(document).ready(function (p) {
+        //     console.log('>>> jq#3: onready event handler for document(DOM) invoked.')
+
+        //     console.log('\t+ 1. p:', p, ', typeof p:', typeof p)                // p == jQuery or $
+        //     console.log('\t+ 2. this:', this, ', typeof this:', typeof this)
+        //     console.log('\t+ 3. $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+        //     console.log('\t+ 4. p === jQuery:', p === jQuery)
+        //     console.log('\t+ 5. p === $:', p === $)
+
+        // })  // jq#3
+
+        //--------------------------------------------------------------------//
+
+        // $(document).ready(function () {
+        //     console.log('>>> jq#4: onready event handler for document(DOM) invoked.')
+
+        //     console.log('\t+ 1. this:', this, ', typeof this:', typeof this)
+        //     console.log('\t+ 2. $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+        // })  // jq#4
+
+        //--------------------------------------------------------------------//
+
+        // $(function onready(p) {
+        //     console.log('>>> jq#5: onready event handler for document(DOM) invoked.')
+
+        //     console.log('\t+ 1. p:', p, ', typeof p:', typeof p)                // p == jQuery or $
+        //     console.log('\t+ 2. this:', this, ', typeof this:', typeof this)
+        //     console.log('\t+ 3. $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+        //     console.log('\t+ 4. p === jQuery:', p === jQuery)
+        //     console.log('\t+ 5. p === $:', p === $)
+
+        // })  // jq#5
+
+        //--------------------------------------------------------------------//
+
+        // $(function (p) {
+        //     console.log('>>> jq#6: onready event handler for document(DOM) invoked.')
+
+        //     console.log('\t+ 1. p:', p, ', typeof p:', typeof p)                // p == jQuery or $
+        //     console.log('\t+ 2. this:', this, ', typeof this:', typeof this)
+        //     console.log('\t+ 3. $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+        //     console.log('\t+ 4. p === jQuery:', p === jQuery)
+        //     console.log('\t+ 5. p === $:', p === $)
+
+        // })  // jq#6
+
+        //--------------------------------------------------------------------//
+
+        $(function () {
+            console.log('>>> jq#7: onready event handler for document(DOM) invoked.')
+
+            console.log('\t+ 1. this:', this, ', typeof this:', typeof this)
+            console.log('\t+ 2. $(this):', $(this), ', typeof $(this):', typeof $(this))
+
+        })  // jq#7
+
+
+        //--------------------------------------------------------------------//
+        // 2. 문서시작 이벤트 핸들러: jQuery(window).load(function () {...})
+        //--------------------------------------------------------------------//
+        // (*주의*) 현재 jQueury 버전에서는, 허용안됨(오류발생): 아래 코드 참고
+        //      
+        //          Uncaught TypeError: e.indexOf is not a function
+        //--------------------------------------------------------------------//
+
+        // Uncaught TypeError: e.indexOf is not a function
+        // jQuery(window).load(function () {
+        //     console.log('>>> onload event handler for window invoked.')
+        //     console.log('\t+ this:', this)
+
+        // })  // jq
+
+        // Uncaught TypeError: e.indexOf is not a function
+        // $(window).load(function () {
+        //     console.log('>>> onload event handler for window invoked.')
+        //     console.log('\t+ this:', this)
+
+        // })  // jq
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

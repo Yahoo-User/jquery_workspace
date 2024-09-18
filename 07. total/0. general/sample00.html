@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample00</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+            msg1()
+
+            $('#id1').click(function (e) {
+                console.log('\t+ onclick event handler for #id2 invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+                msg2()
+            })
+
+        })  // jq
+
+
+        function msg1() {
+            console.log('>>> f msg1() invoked.')
+
+            alert('msg1(): 문서 로딩 후, 자동으로 경고창을 표시합니다.')
+        }   // msg1
+
+
+        function msg2() {
+            console.log('>>> f msg2() invoked.')
+
+            $('#id2').css('background', 'silver')
+            $('#id2').text('msg2(): HTML 문서가 변경되었습니다')
+        }   // msg2
+
+    </script>
+</head>
+
+<body>
+
+    <button id="id1">선택하면 메시지를 변경합니다</button>
+
+    <p />
+
+    <div id="id2">메시지: </div>
+
+</body>
+
+</html>

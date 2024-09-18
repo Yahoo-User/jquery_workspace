@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. 배열관련 메소드 - $.map() / $.grep()</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            console.clear(); console.log('- document ready.');
+
+
+            var arr1 = [
+                { area: '서울', name: '무대리' },
+                { area: '부산', name: '홍과장' },
+                { area: '대전', name: '박사장' },
+                { area: '서울', name: '빅마마' }
+            ];
+
+
+            //-- 1. through JS callback function
+            var arr2 = $.map(arr1, function (e, i) {
+                console.log('- map(', e, ',', i, ') invoked.');
+
+                if (e.area == '서울') {
+                    return e;       // 정상 반환된 원소만, 새로운 배열로 반환
+                } // if
+
+                // return null;    // 반환배열에서 제외: 이 문장 생략시에도 동일한 결과산출
+            }); // $.map
+
+
+            //-- 2. through JS arrow function
+            // var arr2 = $.map( arr1, (e, i) => (e.area == '서울')? e : null ); // $.map
+
+
+            console.log(arr2, arr2 instanceof Array);
+
+            //--------------------------------------------------//
+
+            //-- 1. through JS callback function
+            var arr3 = $.grep(arr1, function (e, i) {
+                console.log('- grep(', e, ',', i, ') invoked.');
+
+                if (e.area == '서울') {
+                    return true;    // true 로 반환된 원소만, 새로운 배열로 반환
+                } // if
+
+                return false;       // 반환배열에서 제외: 이 문장 생략시에도 동일한 결과산출
+            }); // $.grep
+
+
+            //-- 2. through JS arrow function
+            // var arr3 = $.grep( arr1, (e, i) => (e.area == '서울')? true : false );  // $.grep
+
+
+            console.log(arr3, arr3 instanceof Array);
+
+        }); //.jq
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

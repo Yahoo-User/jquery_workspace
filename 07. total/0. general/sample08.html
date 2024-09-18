@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample08</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+
+            $('answer').hide()
+
+
+            // onclick event handler 설정
+            $('p.q1').click(function (e) {
+                console.log('\t+ onclick event handler for p.q1 invoked.')
+
+                console.log('\t\t- e:', e)
+                console.log('\t\t- this:', this)
+                console.log('\t\t- $(this):', $(this))
+
+
+                // $('answer.q1').show()
+                $('answer.q1').toggle()
+            })  // onclick for p.q1
+
+
+            // onclick event handler 설정
+            $('p.q2').click(function (e) {
+                console.log('\t+ onclick event handler for p.q2 invoked.')
+
+                console.log('\t\t- e:', e)
+                console.log('\t\t- this:', this)
+                console.log('\t\t- $(this):', $(this))
+
+
+                // $('answer.q2').show()
+                $('answer.q2').toggle()
+            })  // onclick for p.q2
+
+        })  // jq
+
+    </script>
+</head>
+
+<body>
+
+    <h2>질문1: 대한민국의 수도는 어디입니까?</h2>
+    <p class="q1">[정답보기]</p>
+    <answer class="q1">대한민국의 수도는 <strong>서울</strong>입니다.</answer>
+
+    <p></p>
+
+    <h2>질문2: 대한민국의 국보1호는 무엇입니까?</h2>
+    <p class="q2">[정답보기]</p>
+    <answer class="q2">대한민국의 국보1호는 <strong>숭례문</strong>입니다.</answer>
+
+</body>
+
+</html>

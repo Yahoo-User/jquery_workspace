@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample02</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.clear(); console.log('- jquery started.');
+
+            $('form').submit(function (e) {
+                console.log('\t+ submit event handler invoked.');
+
+                var qs = $(this).serialize();
+                console.log('\t+ serialize:', qs);
+
+                var arr = $(this).serializeArray();
+                console.log('\t+ serializeArray:', arr);
+
+                var obj = {
+                    name: 'Yoseph',
+                    age: 43
+                };
+
+                console.log('\t+ param:', $.param(obj));
+
+                var objStr = JSON.stringify(obj);
+                console.log('\t+ JSON.stringify:', objStr, typeof objStr);
+
+                obj = JSON.parse(objStr);
+                console.log('\t+ JSON.parse:', obj, typeof obj);
+
+                // e.preventDefault();
+                return false;
+            }); // submit
+
+        }); // jq
+
+    </script>
+</head>
+
+<body>
+
+    <form action="">
+        1. name: <input type="text" name="name"><br>
+        2. age: <input type="number" name="age">
+
+        <p></p>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

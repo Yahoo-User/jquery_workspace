@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. 범위제한 전체 형(prevUntil)/동생(nextUntil) 요소 선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            console.log('- document ready.');
+
+
+            var style_1 = {
+                border: '5px ridge purple'
+            };
+
+            var style_2 = {
+                border: '5px ridge red'
+            };
+
+
+            $('.txt3').
+                prevUntil('.title').        // 범위제한 전체형 요소선택자(Half-open)
+                css(style_1);
+
+            $('.txt3').
+                nextUntil('.txt6').         // 범위제한 전체동생 요소선택자(Half-open)
+                css(style_2);
+
+        }); //.jq
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1 class="title">선택자</h1>
+
+        <p>내용1</p>
+        <p>내용2</p>
+        <p class="txt3">내용3</p>
+        <p>내용4</p>
+        <p>내용5</p>
+        <p class="txt6">내용6</p>
+    </div>
+</body>
+
+</html>

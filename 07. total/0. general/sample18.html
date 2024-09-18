@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample18</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        // 이미지의 위치와 크기 변경 예제 by animate() method
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            // To set a mouse event handler
+            $('button.move').click(function (e) {
+                console.log('\t+ onclick event handler for button.move invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+
+                // 애니메이션 효과주기(이미지 위치와 컨텐츠 영역 설정)
+                $('img').animate({
+                    left: '300px',
+
+                    width: '350px',
+                    height: '200px'
+                }, 500)  // animate
+            })  // onclick
+
+
+            // To set a mouse event handler
+            $('button.init').click(function (e) {
+                console.log('\t+ onclick event handler for button.init invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+
+                // 애니메이션 효과주기(이미지 위치와 컨텐츠 영역 설정)
+                $('img').animate({
+                    left: '0px',
+
+                    width: '600px',
+                    height: '350px'
+                }, 1500)  // animate
+            })  // onclick
+
+
+        }) // jq
+
+
+    </script>
+</head>
+
+<body>
+
+    <button class="move">축소</button>
+    <button class="init">복원</button>
+
+    <p></p>
+
+    <img src="https://picsum.photos/600/350" name="pic1" style="position: relative;">
+
+</body>
+
+</html>

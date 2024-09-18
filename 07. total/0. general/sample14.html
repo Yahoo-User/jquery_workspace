@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample14</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        var namedArr = {
+
+            "background-color": "yellow",
+            "font-size": "200%",
+            "color": "blue"
+
+        }   // 연관배열 리터럴 생성
+
+
+        // 1. 연관배열의 속성값 참조방법(2가지)
+        //    (1) 객체변수(=참조변수).key    : 단, 이 경우에는 속성명이 식별자 규칙에 부합해야 함
+        //    (2) 객체변수(=참조변수)[key]
+
+        console.log('1. 연관배열의 속성 참조')
+
+        console.log('namedArr:', namedArr)
+        console.log('\t+ typeof namedArr:', typeof namedArr)
+
+        console.log('\t+ namedArr["background-color"]:', namedArr['background-color'])
+        console.log('\t+ namedArr["font-size"]:', namedArr['font-size'])
+        console.log('\t+ namedArr.color:', namedArr.color)
+
+
+        console.log('--------------------------------------------------------')
+
+
+        var namedObj = {
+
+            backgroundColor: 'yellow',
+            fontSize: '200%',
+            color: 'blue'
+
+        }   // 객체 리터럴 생성
+
+
+        // 2. 객체리터럴의 속성값 참조방법(2가지)
+        //    (1) 객체변수(=참조변수).속성명
+        //    (2) 객체변수(=참조변수)[속성명]
+
+        console.log('2. 객체리터럴의 속성 참조')
+
+        console.log('namedObj:', namedObj)
+        console.log('\t+ typeof namedObj:', typeof namedObj)
+
+        console.log('\t+ namedObj["backgroundColor"]:', namedObj['backgroundColor'])
+        console.log('\t+ namedObj.fontSize:', namedObj.fontSize)
+        console.log('\t+ namedObj.color:', namedObj.color)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

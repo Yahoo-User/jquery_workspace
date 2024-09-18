@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. 배열관련메소드 - $.inArray() / $.isArray() / $.merge()</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            console.clear(); console.log('- document ready.');
+
+
+            var arr1 = ['서울', '대전', '부산', '전주'];
+            var arr2 = ['한국', '미국', '일본', '중국'];
+
+            var obj = {
+                name: '정부장',
+                area: '서울'
+            };  // 객체리터럴표기방식으로 객체생성.
+
+
+            console.log('1. arr1:', arr1);
+            console.log('2. arr2:', arr2);
+            console.log('3. obj:', obj);
+
+            //-------------------------------------------//
+
+            // (method) JQueryStatic.inArray<string>(value: string, array: string[], fromIndex?: number): number
+            var index = $.inArray('부산', arr1);
+            console.log(`- '부산' index in the Array: ${index}`);   // Found.
+
+            var index = $.inArray('수원', arr1);
+            console.log(`- '수원' index in the Array: ${index}`);   // No found.
+
+            //-------------------------------------------//
+
+            var bool = $.isArray(arr1);
+            console.log(`- arr1 is array ? ${bool}`);
+
+            var bool = $.isArray(obj);
+            console.log(`- obj is array ? ${bool}`);
+
+            //-------------------------------------------//
+
+            var newArr = $.merge(arr1, arr2);
+            // var newArr = $.merge(arr2, arr1);
+
+            // var newArr = $.merge(arr1, obj);
+            // var newArr = $.merge(arr2, obj);
+
+            console.log('- newArr:', newArr);
+
+
+        }); //.jq
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

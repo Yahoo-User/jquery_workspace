@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample02</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+</head>
+
+<body>
+
+    <p id="p1"></p>
+
+
+    <script>
+
+        var pTag = jQuery('#p1')      // by id selector
+        // var pTag = $('p')            // by tag selector
+
+        console.log('pTag:', pTag, ', typeof pTag:', typeof pTag)
+
+        // pTag.html('Hello, World!!!')     // by innerHTML
+        pTag.text('Hello, World!!!')        // by textContent
+
+        //-----------------------------------------------------//
+
+        // console.log('jQuery(body p):', jQuery('body p'))
+        // jQuery('body p').html('<h2>The Earth</h2>')
+        // $('body p').text('<h2>The Mars</h2>')
+
+        //-----------------------------------------------------//
+
+        // jQuery('<h1>새로운 HTML 요소의 동적추가</h1>').appendTo('body')
+        // $('<h2>새로운 HTML 요소의 동적추가</h2>').appendTo('body')
+
+    </script>
+
+</body>
+
+</html>

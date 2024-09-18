@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample17</title>
+
+    <link rel="stylesheet" href="../../css/common.css">
+
+    <style>
+        .css_pic {
+            height: 370px;
+            padding: 10px;
+
+            text-align: center;
+        }
+
+        .css_pic img {
+            width: 500px;
+        }
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    
+    <script>
+
+        // 애니메이션 효과주기: 크기 및 위치 변경 예제 by animate(속성[, 지속시간(ms)])
+
+        $(function () {
+            console.log('>>> onready event handler for document(DOM) invoked.')
+            console.log('\t+ this:', this)
+
+
+            // To set a mouse event handler
+            $('button.b1').click(function (e) {
+                console.log('\t+ onclick event handler for button.b1 invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+
+                // 애니메이션 효과주기(이미지 가로길이를 100px로 설정)
+                $('img').animate({
+                    width: '100px'
+                }, 300)  // animate
+            })  // onclick
+
+
+            // To set a mouse event handler
+            $('button.b2').click(function (e) {
+                console.log('\t+ onclick event handler for button.b2 invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+
+                // 애니메이션 효과주기(이미지 가로길이를 200px로 설정)
+                $('img').animate({
+                    width: '200px'
+                }, 600)  // animate
+            })  // onclick
+
+
+            // To set a mouse event handler
+            $('button.b3').click(function (e) {
+                console.log('\t+ onclick event handler for button.b3 invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+
+                // 애니메이션 효과주기(이미지 가로길이를 300px로 설정)
+                $('img').animate({
+                    width: '300px'
+                })  // animate
+            })  // onclick
+
+
+            // To set a mouse event handler
+            $('button.b4').click(function (e) {
+                console.log('\t+ onclick event handler for button.b4 invoked.')
+                console.log('\t\t- e:', e); console.log('\t\t- this:', this)
+
+
+                // 애니메이션 효과주기(이미지 가로길이를 원래대로 복원)
+                $('img').animate({
+                    width: '500px'
+                }, 3000)  // animate
+            })  // onclick
+
+        })  // jq
+
+    </script>
+</head>
+
+<body>
+
+    <div class="css_pic boxBorder">
+        <button class="b1">가로 100 픽셀</button>
+        <button class="b2">가로 200 픽셀</button>
+        <button class="b3">가로 300 픽셀</button>
+        <button class="b4">원래 가로길이로 복원</button>
+
+        <p></p>
+
+        <img src="https://picsum.photos/500/300" name="pic1">
+    </div>
+
+</body>
+
+</html>
