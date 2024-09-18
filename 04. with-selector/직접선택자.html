@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <title>직접선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        // 1. 전체 선택자
+        // $(() => $('*').css('border', '3px solid purple'));
+
+        // 2. 아이디 선택자
+        // $(() => $('#tit').css('background-color', '#ff0').css('border', '3px solid purple'));
+
+        // 3. 클래스 선택자
+        // $(() => $('.title').css('background-color', '#ff0').css('border', '3px solid purple'));
+
+        // 4. 요소 선택자
+        // $(() => $('h2').css('background-color', '#0ff').css('border', '3px ridge purple'));
+
+        // 5. 그룹 선택자
+        // $(() => $('.title, h1').css('background-color', '#0ff').css('border', '3px outset purple'));
+
+        // 6. 종속 선택자
+        // $(() => $('h2#tit').css('backgroundColor', '#0ff').css('border', '3px dotted purple'));
+
+    </script>
+</head>
+
+<body>
+
+    <h1>jQuery</h1>
+    <h2 id="tit">Selector</h2>
+    <h3 class="title">Direct Selector</h3>
+    <h3>Adject Selector</h3>
+
+</body>
+
+</html>

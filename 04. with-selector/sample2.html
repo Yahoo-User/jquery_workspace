@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <title>sample2</title>
+</head>
+
+<body>
+
+    <h1>Welcome !!!</h1>
+
+    <p id="name"></p>
+
+    <script defer>
+        document.write('<!DOCTYPE html>');
+
+        // (1) valid string or (2) empty string (if just enter without any input) or (3) null (if cancel)
+        var name = prompt("Please enter your name ?", 'Pyramide');
+
+        var p = document.querySelector('p#name');
+        p.innerHTML = '<b><big>'+name+'</big></b>';
+
+        document.write('현재시각은&nbsp;' + new Date());
+    </script>
+</body>
+
+</html>

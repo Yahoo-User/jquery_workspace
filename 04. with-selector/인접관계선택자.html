@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <title>인접관계 선택자</title>
+
+    <style>
+        *:root {
+            font-family: D2Coding;
+            color: black;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        // 1.$(direct selector).next()
+        // $(() => $('h2').next().css('color', 'green'));
+
+        // 2. $(direct selector).siblings(selector)
+        // $(() => $('h2').siblings('h3').css('color', 'purple'));
+
+        // 3. $(direct selector).parent() : 부모요소 선택자
+        // $(() => $('h2').parent().css('border', '3px solid purple'));
+
+        // $(() => $('h2').parent('#inner_wrap').css('border', '3px outset purple'));
+
+        // 4. 하위요소(후손) 선택자
+        // $(() => $('#wrap h1').css({
+        //     'background-color': 'green',
+        //     'border': '3px solid #f00',
+        //     'color': 'white'
+        // }));
+
+        // $(() => $('#wrap h1').css({
+        //     backgroundColor: 'green',
+        //     border: '3px dashed #f00',
+        //     color: 'white'
+        // }));
+
+        // 5. 자식요소 선택자
+        // $(() => $('#inner_wrap>h1').css('border', '2px solid purple'));
+
+        // $(() => $('#inner_wrap').children().css({
+        //     'border': '2px solid purple'
+        // }));
+
+        // $(() => $('#wrap').children('#temp').css('border', '2px solid purple'));
+        // $(() => $('#wrap>#inner_wrap').children().css({
+        //     backgroundColor: '#f00',
+        //     border: '2px solid purple',
+        //     color: 'white'
+        // }));
+
+        // $(() => $('#wrap>div#temp').children().css('color', 'red'));
+
+        // 6. 형(이전) / 동생(다음) 요소 선택자
+        // $(() => {
+
+        //     let style1 = {
+        //         backgroundColor : '#0ff',
+        //         border: '2px solid purple'
+        //     };
+
+        //     let style2 = {
+        //         backgroundColor : '#0f0',
+        //         border: '2px dotted purple'
+        //     };
+
+        //     // $('.txt').prev().css(style1);
+        //     // $('.txt').prev('h2').css(style1);
+        //     // $('.txt').next().css(style2);
+        //     // $('.txt').next('p').css(style2);
+        //     // $('.txt').next().next().css(style1);
+        //     // $('.txt+p').css(style2);
+        //     $('.txt+p+p+h3').css(style2);
+
+        // }); // .jq
+
+        // 7. 전체 형(이전) / 동생(다음) 요소선택자
+        // $(() => {
+
+        //     let style1 = {
+        //         backgroundColor: '#0ff',
+        //         border: '2px solid purple'
+        //     };
+
+        //     let style2 = {
+        //         backgroundColor: '#ff0',
+        //         border: '2px dashed #f00'
+        //     };
+
+        //     // $('.txt').prevAll().css(style1);
+
+        //     // $('.txt').nextAll().css(style2);
+
+        // }); // .jq
+
+
+        // 8. 전체 형제요소 선택자
+        // $(() => {
+
+        //     // $('.txt').siblings().css('border', '2px solid purple');
+        //     $('.txt').siblings('p').css('border', '2px solid purple');
+
+        // }); // .jq
+
+
+        // 9. 범위제한 전체 형/동생 요소 선택자
+        // $(() => {
+
+        //     let style1 = {
+        //         backgroundColor: '#0ff',
+        //         border: '2px solid purple'
+        //     };
+
+        //     let style2 = {
+        //         backgroundColor: '#ff0',
+        //         border: '2px dashed #f00'
+        //     };
+
+        //     $('.txt').prevUntil('h1').css(style1);
+        //     $('.txt').nextUntil('h3').css(style2);
+
+        // }); // .jq
+
+
+        // // 10. 상위요소 선택자
+        // $(() => {
+
+        //     // $('.txt').parents().css('border', '2px solid purple');
+        //     $('.txt').parents('#inner_wrap').css({
+        //         border: '2px dotted purple'
+        //     });
+
+        // }); // .jq
+
+
+        // 11. 가장 가까운 상위요소 선택자
+        $(() => {
+            $('.txt').closest('#inner_wrap').next().css('border', '2px solid purple');
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="inner_wrap">
+            <h1>TITLE_1</h1>
+            <h2>TITLE_2</h2>
+            <p class="txt">CONTENT_1</p>
+            <p>CONTENT_2</p>
+            <p>CONTENT_3</p>
+            <h3>TITLE_3</h3>
+        </div>
+
+        <div id="temp">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, amet est illum eveniet asperiores soluta nihil id?</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

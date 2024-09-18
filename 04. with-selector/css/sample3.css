@@ -1,0 +1,42 @@
+@charset "utf8";
+
+body {
+    background: url('https://picsum.photos/600/400') no-repeat fixed;
+
+    background-size: cover;
+    /* background-size: contain; */
+    text-align: center;
+}
+.btn {
+    margin-top: 50px;
+    font-weight: 400;
+    color: white;
+    background-color: #007bff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-color: #007bff;
+    border-radius: .55rem;
+    cursor: pointer;
+
+    transition: background-color 1.2s ease-in-out, border-color 1.2 ease-in-out, box-show 1.2s ease-in;
+}
+.btn:cover {
+    color: white;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+.show {
+    margin-top: 50px;
+    padding: 20px 30px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+    font-size: 2rem;
+    font-weight: bolder;
+    color: white;
+}

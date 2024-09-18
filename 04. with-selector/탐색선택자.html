@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <title>탐색선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        $(() => {
+            
+            // 1. :first / :last selector
+            // $('#menu li:first').css({
+            //     backgroundColor: '#ff0',
+            //     border: '2px solid purple'
+            // });
+
+            // $('#menu li').first().css({
+            //     backgroundColor: '#ff0',
+            //     'border': '2px solid purple'
+            // });
+
+            // $('#menu li:last').css({
+            //     backgroundColor: '#0ff',
+            //     border: '2px solid red'
+            // });
+
+            // $('#menu li').last().css({
+            //     'background-color': '#0ff',
+            //     'border': '2px solid red'
+            // });
+
+
+            // 2. even / odd selector
+            // $('#menu li:even').css({
+            //     backgroundColor: '#ff0',
+            //     border: '2px solid purple'
+            // });
+
+            // $('#menu li:odd').css({
+            //     backgroundColor: '#0f0',
+            //     border: '2px dotted purple'
+            // });
+
+
+            // 3. eq(index), lt(index), gt(index) selector
+            // $('#menu li:eq(2)').css('background-color', '#0f0');
+            // $('#menu li').eq(1).css({
+            //     'background-color': '#00f',
+            //     color: 'white'
+            // });
+
+            // $('#menu li:gt(1)').css('border', '2px solid purple');
+            // $('#menu li:lt(3)').css('border', '2px solid red');
+
+
+            // 4. first-of-type, last-of-type selector
+            // $('li:first-of-type').css('border', '2px solid purple');
+            // $('li:last-of-type').css('border', '2px solid green');
+
+
+            // 5. nth-child(n), nth-last-of-type(n) selector
+            // $('li:nth-child(1)').css('border', '1px solid purple');
+            // $('li:nth-child(2n)').css('border', '1px solid red');
+            // $('li:nth-child(2n+1)').css('border', '1px solid green');
+
+            // $('li:nth-last-child(1)').css('border', '1px solid red');
+            // $('li:nth-last-child(3)').css('border', '1px solid red');
+            // $('li:nth-last-child(2n)').css('border', '1px solid green');
+
+            // $('#menu li:nth-child(1)').css('color', 'red');
+            // $('#menu li:nth-child(2n)').css('color', 'green');
+            // $('#menu li:nth-child(2n+1)').css('color', 'blue');
+
+
+            // 5. only-child, slice(index) selector
+            // $('p:only-child').css({
+            //     'border': '1px solid red',
+            //     'font-weight': 'bold'
+            // });
+
+            // $('li').slice(3).css({
+            //     backgroundColor: 'purple',
+            //     color: 'white'
+            // });
+
+            // $('li').slice(1, 4).css({
+            //     backgroundColor: 'purple',
+            //     color: 'white'
+            // });
+
+            // $('li').slice($('li').length - 1).css('border', '1px solid purple');
+            $('li').slice(-4).css('border', '1px solid blue');
+
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Lorem ipsum dolor sit.</h1>
+
+    <ul id="menu">
+        <li>ITEM0</li>
+        <li>ITEM1</li>
+        <li>ITEM2</li>
+        <li>ITEM3</li>
+    </ul>
+
+    <p>Lorem ipsum dolor sit.</p>
+
+    <ul>
+        <li>ITEM4</li>
+        <li>ITEM5</li>
+        <li>ITEM6</li>
+    </ul>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque omnis in magnam suscipit vero voluptatem, doloribus officia.</p>
+    </div>
+
+</body>
+
+</html>

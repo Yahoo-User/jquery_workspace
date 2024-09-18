@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <title>sample5</title>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"     integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" integrity="sha512-QDsjSX1mStBIAnNXx31dyvw4wVdHjonOwrkaIhpiIlzqGUCdsI62MwQtHpJF+Npy2SmSlGSROoNWQCOFpqbsOg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- <script src="js/sample5.js" defer></script> -->
+
+    <script>
+
+        // $(document).ready(function () {
+        //     console.debug('ready() invoked.');
+
+        //     $('h1').css('color', 'blue');
+        // }); // onready
+
+        // $(document).ready(() => {
+        //     console.debug('onready invoked.');
+
+        //     $('h1').css('color', 'red');
+        // }); // onready
+
+        // $(document).ready(() => $('h1').css('color', 'green'));
+
+        $(document).ready(() => {
+            $('h1').attr('id', 'hello');
+
+            $('h1').removeAttr('id');
+        }); // onready
+
+    </script>
+
+    <script>
+
+        // $(function () {
+        //     console.debug('jq invoked.');
+
+        //     $('h1').css('color', 'green');
+        // }); //.jq
+
+        // $(() => {
+        //     console.debug('jq invoked.');
+
+        //     $('h1').css('color', 'green');
+        // }); // .jq
+
+    </script>
+</head>
+
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+
+    <section id="food_1">
+        <h2>Lorem, ipsum.</h2>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+        </ul>
+    </section>
+
+    <section id="food_2">
+        <h2>Lorem.</h2>
+        <ul>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

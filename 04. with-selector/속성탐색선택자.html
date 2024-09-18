@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <title>속성탐색선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        $(() => {
+
+            // 1. 속성과 값에 따른, 탐색 선택자
+            // $('#wrap a[target]').css({
+            //     color: 'red',
+            //     fontSize: '20px',
+            //     fontWeight: 'bold',
+            //     textDecoration: 'none'
+            // });
+
+            // $('#wrap a[href^=https]').css({
+            //     'color': 'green',
+            //     'text-decoration': 'none'
+            // });
+
+            // $('#wrap a[href$=net]').css({
+            //     color: 'red',
+            //     fontSize: '20px',
+            //     textDecoration: 'none'
+            // });
+
+            // $('#wrap a[href*=google]').css({
+            //     color: 'blue',
+            //     fontSize: '20px',
+            //     fontWeight: 'bold',
+            //     textDecoration: 'none'
+            // });
+
+            // $('#member_f :text').css('background-color', 'green');
+            // $('#member_f :password').css('background-color', '#0ff');
+
+
+            // 2. 속성상태에 따른, 탐색 선택자
+            $('#wrap :hidden').css({
+                display: 'block',
+                background: '#ff0'
+            });
+
+            let zone1 = $('#zone1 :selected').val();
+            console.log('1. zone1:', zone1);
+
+            let zone2 = $('#zone2 :checked').val();
+            console.log('2. zone2:', zone2);
+
+            let zone3 = $('#zone3 :checked').val();
+            console.log('3. zone3:', zone3);
+
+            $('p:contains("consectetur")').css('backgroundColor', 'aqua');
+            
+            let contents = $('a').contents();
+            console.log('4. contents:', contents);
+            $.each(contents, (index, value) => console.log(value.wholeText));
+
+        }); // .jq
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <p><a href="https://naver.com" target="_blank">NAVER</a></p>
+        <p><a href="https://daum.net">DAUM</a></p>
+        <p><a href="https://google.co.kr">GOOGLE</a></p>
+        <p><a href="https://youtube.com">YOUTUBE</a></p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p style="display: none;">Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, ipsa.</p>
+    </div>
+
+    <form action="#" method="GET" id="member_f">
+        <p>
+            <label for="user_id">아이디</label>
+            <input type="text" name="user_id" id="user_id">
+        </p>
+
+        <p>
+            <label for="user_pw">비밀번호</label>
+            <input type="password" name="user_pw" id="user_pw">
+        </p>
+
+        <p id="zone1">
+            <select name="course" id="course">
+                <option value="opt1">Option1</option>
+                <option value="opt2">Option2</option>
+                <option value="opt3" selected>Option3</option>
+            </select>
+        </p>
+
+        <p id="zone2">
+            <input type="checkbox" name="hobby1" value="Value1">Value1
+            <input type="checkbox" name="hobby1" value="Value2">Value2
+            <input type="checkbox" name="hobby1" value="Value3" checked>Value3
+        </p>
+
+        <p id="zone3">
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female" checked>Female
+        </p>
+    </form>
+
+
+
+</body>
+
+</html>
