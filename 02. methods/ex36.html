@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex36</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.prop(propertyName: string): any
+            //------------------------------------------------------------------------------//
+            var result_1 = $('#check1').prop('checked');
+            console.log(`- typeof result_1: ${typeof result_1}, result_1:`, result_1);
+
+            var result_2 = $('#check2').prop('checked');
+            console.log(`- typeof result_2: ${typeof result_2}, result_2:`, result_2);
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.prop(propertyName: string, value: string | number | boolean): JQuery
+            //------------------------------------------------------------------------------//
+            $('#check3').prop('checked', true);
+
+            var result_3 = $('#select1').prop('selectedIndex');
+            console.log(`- typeof result_3: ${typeof result_3}, result_3:`, result_3);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+
+    <h1><strong>TITLE</strong></h1>
+
+    <form action="#" id="form_1">
+        <p>
+            <input type="checkbox" name="check1" id="check1"><label for="check1">Check1</label>
+            <input type="checkbox" name="check2" id="check2" checked><label for="check2">Check2</label>
+            <input type="checkbox" name="check3" id="check3"><label for="check3">Check3</label>
+        </p>
+
+        <p>
+            <select name="select1" id="select1">
+                <option value="opt1" selected>option1</option>
+                <option value="opt2">option2</option>
+                <option value="opt3">option3</option>
+            </select>
+        </p>
+    </form>
+    
+</body>
+</html>

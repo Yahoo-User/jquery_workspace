@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex15</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            // (method) JQuery.css(properties: Object): JQuery
+
+
+            // (method) JQuery.parents(selector?: string): JQuery
+            $('.txt1').parents().css({
+                'border': '3px solid purple'
+            });
+
+            // (method) JQuery.parents(selector?: string): JQuery
+            $('.txt2').parents('div').css({
+                'border': '3px solid red'
+            });
+        }); //.jq
+
+    </script>
+</head>
+<body>
+
+    <h1 class="title">TITLE</h1>
+
+    <section>
+        <div>
+            <p class="txt1">paragraph_1</p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <p class="txt2">paragraph_2</p>
+        </div>
+    </section>
+    
+</body>
+</html>

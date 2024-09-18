@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex22</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            $('li:only-child').css({ border: '5px solid purple' });
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.slice(start: number, end?: number): JQuery
+            //      : start => starts with 0
+            //      : end?  => half-open (exclusive)
+            //              => if omitted, the end of selected items
+            //------------------------------------------------------------------------------//
+            $('#menu1 li').slice(1, 3).css({ border: '5px solid blue' });
+            $('#menu3 li').slice(4).css({ border: '5px inset gold' });
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <h1>TITLE</h1>
+
+    <ul id="menu1">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>item5</li>
+    </ul>
+
+    <ul id="menu3">
+        <li>item6</li>
+        <li>item7</li>
+        <li>item8</li>
+        <li>item9</li>
+        <li>item10</li>
+        <li>item11</li>
+        <li>item12</li>
+        <li>item13</li>
+    </ul>
+</body>
+</html>

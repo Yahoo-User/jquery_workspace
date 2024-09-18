@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            var style_1 = {
+                'background-color': '#0ff',
+                'border': '5px solid purple'
+            };
+
+            // console.log('typeof style_1:', typeof style_1);     // object
+
+            var style_2 = {
+                'background-color': '#ff0',
+                'border': '5px solid purple'
+            };
+
+            var style_3 = {
+                'background-color': '#0f0',
+                'border': '5px solid purple'
+            };
+
+
+            // (method) JQuery.css(properties: Object): JQuery
+
+            // (method) JQuery.prev(selector?: string): JQuery
+            $('.txt').prev().css(style_1);
+
+            $('.txt + p').css(style_2);
+
+            // (method) JQuery.next(selector?: string): JQuery
+            $('.txt').next().next().css(style_3);
+
+        }); // .jq
+
+    </script>
+</head>
+<body>
+
+    <div id="wrap">
+        <h1>TITLE</h1>
+
+        <p>paragraph1</p>
+        <p class="txt">paragraph2</p>
+        <p>paragraph3</p>
+        <p>paragraph4</p>
+    </div>
+    
+</body>
+</html>

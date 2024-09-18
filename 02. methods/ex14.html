@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            var style_1 = {
+                'background-color': '#0ff',
+                'border': '5px solid purple'
+            };
+
+
+            // (method) JQuery.prevUntil(selector?: string, filter?: string): JQuery
+            $('.txt3').prevUntil('.title').css(style_1);    // .title exclusive (half-open)
+
+            // (method) JQuery.nextUntil(selector?: string, filter?: string): JQuery
+            $('.txt3').nextUntil('.txt6').css(style_1);     // .txt6 exclusive (half-open)
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <div id="wrap">
+        <h1 class="title">TITLE</h1>
+
+        <p>paragraph_1</p>
+        <p>paragraph_2</p>
+
+        <p class="txt3">paragraph_3</p>
+
+        <p>paragraph_4</p>
+        <p>paragraph_5</p>
+        
+        <p class="txt6">paragraph_6</p>
+    </div>
+</body>
+</html>

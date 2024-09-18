@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample03</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.clear(); console.log('- jqueury started.');
+
+
+            var obj = {
+                name: '한글',
+                age: 23
+            };
+
+            // (property) JQueryStatic.param: JQueryParam(obj: any) => string (+1 overload)
+            var queryString = $.param(obj);
+            console.log('- queryString:', queryString);
+
+
+            // (method) JQueryStatic.ajax(settings: JQueryAjaxSettings): JQueryXHR (+1 overload)
+            $.ajax({
+                async: true,
+                timeout: 1,
+                cache: false,
+
+                username: 'Yoseph',
+
+                crossDomain: false,
+                jsonp: "callback",
+                jsonpCallback: function () {
+                    console.log('>>> jsonpCallback handler invoked.');
+                    
+                },  // jsonpCallback
+
+                type: 'get',
+                data: queryString,
+                // contentType: 'text',
+                contentType: 'application/x-www-form-urlencoded',
+
+                url: "MOCK_DATA.json",
+                dataType: "json",
+
+
+                // xhr: function () {
+                //     console.log('>>> xhr handler invoked.');
+                    
+                    
+                // },  // xhr
+
+
+                // (method) JQueryAjaxSettings.beforeSend?(jqXHR: JQueryXHR, settings: JQueryAjaxSettings): any
+                beforeSend: function (jqXHR, settings) {
+                    console.log('>>> beforeSend handler invoked.');
+
+                    console.log('\t+ jqXHR:', jqXHR);
+                    // console.log('\t+ settings:', settings);
+                    console.log('\t+ settings.keys:', Object.keys(settings));
+                    console.log('\t+ settings.values:', Object.values(settings));
+
+                    
+                },  // beforeSend
+
+
+                // (method) JQueryAjaxSettings.success?(data: any, textStatus: string, jqXHR: JQueryXHR): an
+                success: function (data, textStatus, jqXHR) {
+                    console.log('>>> success handler invoked.');
+
+                    console.log('\t+ data:', data);
+                    console.log('\t+ textStatus:', textStatus);
+                    console.log('\t+ jqXHR:', jqXHR);
+
+
+                },  // success
+
+
+                // (method) JQueryAjaxSettings.error?(jqXHR: JQueryXHR, textStatus: string, errorThrown: string): any
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('>>> error handler invoked.');
+
+                        console.log('\t+ jqXHR:', jqXHR);
+                        console.log('\t+ textStatus:', textStatus);
+                        console.log('\t+ errorThrown:', errorThrown);
+
+
+                },   // error
+
+
+                // (method) JQueryAjaxSettings.complete?(jqXHR: JQueryXHR, textStatus: string): any
+                complete: function (jqXHR, textStatus) {
+                    console.log('>>> complete handler invoked.');
+
+                        console.log('\t+ jqXHR:', jqXHR);
+                        console.log('\t+ textStatus:', textStatus);
+
+
+                    
+                },  // complete
+
+            }); // $.ajax
+            
+        }); //  jq
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

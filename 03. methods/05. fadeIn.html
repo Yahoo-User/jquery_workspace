@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>5. fadeIn</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(window).load(function () {
+            console.clear(); console.group('5. fadeIn() method.');
+            // -------------------------------------------------------
+            
+
+            var img = $('img');
+            
+            img.fadeOut();
+
+            // ---
+
+            setTimeout(function () {
+                console.log('\t+ Timed out.');
+
+                // 1.
+                // img.fadeIn();
+                // img.fadeIn('slow');
+                // img.fadeIn('fast');
+                // img.fadeIn(1000);       // in millseconds.
+
+                // 2.
+                img.fadeIn(function () {
+                // img.fadeIn('slow', function () {
+                // img.fadeIn('fast', function () {
+                // img.fadeIn(1000, function () {
+                    console.log('\t+ Done.');
+                }); // .fadeIn
+
+            }, 3000);
+
+
+            // -------------------------------------------------------
+            console.groupEnd();
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>5. fadeIn() method</h1>
+
+    <hr>
+
+    <img src="https://picsum.photos/600/400">
+
+</body>
+
+</html>

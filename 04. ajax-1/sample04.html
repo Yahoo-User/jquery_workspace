@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample04</title>
+
+    <style>
+        #wrapper {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 1000px;
+            padding: 3px;
+
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.clear(); console.log('* jquery started.......');
+
+
+            var jqueryXHR = $.ajax({
+
+                async: true,
+                timeout: 500,
+                cache: false,
+                crossDomain: true,
+                type: 'get',
+
+                url: 'MOCK_DATA.json',
+                dataType: 'json',
+
+
+                success: function (data, textStatus, jqXHR) {
+                    console.log('-----------------------------------------------');
+                    console.log(`- success() invoked.`);
+                    console.log('-----------------------------------------------');
+
+                    console.dir(data);
+
+                    if(data.length > 0) {
+                        var table = $('<table border="1"/>');
+
+
+                        for(let person of data) {
+
+                            let tr = $('<tr/>');
+
+                            let id          = $('<td/>').text(person.id);
+                            let first_name  = $('<td/>').text(person.first_name);
+                            let last_name   = $('<td/>').text(person.last_name);
+                            let email       = $('<td/>').text(person.email);
+                            let gender      = $('<td/>').text(person.gender);
+                            let ip_address  = $('<td/>').text(person.ip_address);
+
+                            // tr.append(id);
+                            // tr.append(first_name);
+                            // tr.append(last_name);
+                            // tr.append(email);
+                            // tr.append(gender);
+                            // tr.append(ip_address);
+
+                            id.appendTo(tr);
+                            first_name.appendTo(tr);
+                            last_name.appendTo(tr);
+                            email.appendTo(tr);
+                            gender.appendTo(tr);
+                            ip_address.appendTo(tr);
+
+                            table.append(tr);
+                        } // for-of
+
+
+                        $('#wrapper').append(table);
+                    } // if
+                    
+                } // success
+                
+            }); // $.ajax
+
+
+        }); // jq
+
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper"></div>
+</body>
+
+</html>

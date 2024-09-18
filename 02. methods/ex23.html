@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex23</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            var obj = [ {area: 'Seoul'}, {area: 'Pusan'}, {area: 'Junju'} ];
+            console.log(obj);
+            console.log('typeof obj:', typeof obj);
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.each(func: (index: number, elem: Element) => any): JQuery
+            //------------------------------------------------------------------------------//
+            $(obj).each(function (index, item) {
+                console.log(`index: ${index}, item:`, item);
+            }); // .each
+
+            console.log('======================================');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQueryStatic.each(collection: any, callback: (indexInArray: any, valueOfElement: any) => any): any
+            //------------------------------------------------------------------------------//
+            $.each($('#menu2 li'), function (index, item) {
+                console.log(`index: ${index}, item:`, item);
+            }); // $.each
+
+            console.log('======================================');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.each(func: (index: number, elem: Element) => any): JQuery
+            //------------------------------------------------------------------------------//
+            $(obj).each(function (index, item) {
+                // $(this) : jQuery object wrapping a item of the array.
+                console.log(`index: ${index}, item:`, $(this));
+            }); // .each
+
+            console.log('======================================');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQueryStatic.each(collection: any, callback: (indexInArray: any, valueOfElement: any) => any): any
+            //------------------------------------------------------------------------------//
+            $.each($('#menu2 li'), function (index, item) {
+                // $(this) : jQuery object wrapping a item of the array.
+                console.log(`index: ${index}, item:`, $(this));
+            }); // $.each
+
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <h1>TITLE</h1>
+
+    <ul id="menu1">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+    </ul>
+
+</body>
+</html>

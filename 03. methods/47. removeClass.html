@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>47. removeClass</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // Remove a single class or multiple classes from each element in the set of matched elements.
+
+            var container = $('.container');
+            console.debug('container:', container, container[0].constructor.name);  // HTMLDivElement
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);              // HTMLDivElement
+
+            var h2 = $('h2');
+            console.debug('h2:', h2, h2[0].constructor.name);                       // HTMLHeadingElement
+
+            // ---
+
+            // 1.
+            h2.removeClass('title');
+
+            // 2.
+            // h2.removeClass();
+            // inner.removeClass();
+
+            // 3.
+            // inner.removeClass('inner inner2');
+            // inner.removeClass(['inner', 'inner2', 'inner3']);
+            // container.removeClass(['container']);
+
+            // 4. 
+            // inner.removeClass(function () {
+            //     console.debug('removeClass() invoked.');
+
+            //     return 'inner';
+            //     // return 'inner inner2';
+            //     // return ['inner', 'inner3'];
+            // });
+
+            // 5.
+            // inner.removeClass(function (index, className) {
+            //     console.debug(`removeClass(${index}, ${className}) invoked.`);
+
+            //     return 'inner';
+            //     // return 'inner inner2';
+            //     // return ['inner', 'inner3'];
+            // });
+
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>47. removeClass()</h1>
+
+    <hr>
+    
+
+    <h2 class="title">Greetings</h2>
+
+    <div class="container">
+        <div class="inner inner2">Hello</div>
+        <div class="inner inner2 inner3">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

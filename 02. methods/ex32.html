@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex32</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.html(): string
+            //------------------------------------------------------------------------------//
+            var result_1 = $('#section1').html();
+            console.log(`1. typeof: ${typeof result_1}, result_1: ${result_1}`);
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.html(htmlString: string): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section1 p').html('<a href="#">link</a>');
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.text(): string
+            //------------------------------------------------------------------------------//
+            var result_2 = $('#section2').text();
+            console.log(`2. typeof: ${typeof result_2}, result_2: ${result_2}`);
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.text(text: string | number | boolean): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section2 h2').text('TEXT');
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <h1><strong>TITLE</strong></h1>
+
+    <section id="section1">
+        <h2>
+            <em>sub_title1</em>
+            <p>paragraph_1</p>
+        </h2>
+    </section>
+
+    <section id="section2">
+        <h2>
+            <em>sub_title2</em>
+            <p>paragraph_2</p>
+        </h2>
+    </section>
+
+</body>
+</html>

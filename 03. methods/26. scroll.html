@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>26. scroll</title>
+
+    <style>
+        #wrapper {
+            box-sizing: border-box;
+
+            width: 400px;
+            height: 300px;
+            border: 5px ridge purple;
+
+            overflow: auto;
+            /* overflow: scroll; */
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear();
+
+            var wrapper = $('#wrapper');
+            console.log('wrapper:', wrapper, 'type:', wrapper[0].constructor.name);      // HTMLDivElement
+
+            // ---
+
+            // The scroll event is sent to an element when the user scrolls to a different place in the element.
+            // It applies to window objects, but also to scrollable frames and elements
+            // with the overflow CSS property set to scroll (or auto when the element's explicit height 
+            // or width is less than the height or width of its contents).
+
+            // 1. 
+            wrapper.scroll(function (e) {
+                console.debug('When the user scrolls to a different place in the element...');
+                console.log('\t+ e', e);
+            }); // .scroll
+
+            // 2.
+            // wrapper.scroll(false);           // Event ignored.
+
+            // wrapper.scroll(function (e) {
+            //     console.debug('When the user scrolls to a different place in the element. but IGNORED.');
+            //     console.log('\t+ e', e);
+            //     return false;
+            // }); // .scroll
+
+            // 3.
+            // wrapper.scroll('data', function (e) {
+            // wrapper.scroll(100, function (e) {
+            // wrapper.scroll(3.14159, function (e) {
+            // wrapper.scroll(true, function (e) {
+            // wrapper.scroll({ name: 'Yoseph', age: 23 }, function (e) {
+            // wrapper.scroll([1, .3, false, 'Hello', [1,2,3], { age: 23} ], function (e) {
+            //     console.debug('When the user scrolls to a different place in the element...');
+            //     console.log('\t+ e.data:', e.data);
+            // }); // .scroll
+
+            // 4.
+            // wrapper.scroll();                // Trigger a scroll event.
+
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>26. scroll() Method</h1>
+
+    <hr>
+
+    <div id="wrapper">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, molestiae vitae optio dignissimos accusamus nobis libero, saepe explicabo, quas voluptatibus iusto ducimus similique neque vero eos maiores pariatur nisi? Sapiente natus accusamus dolores voluptatem sint fugit ducimus consequatur dicta sit temporibus explicabo magnam, soluta, doloremque excepturi sed nam, quibusdam nihil facilis cum! Dolores dolor animi veritatis quo! Omnis dicta eligendi sapiente expedita magnam sint ipsam necessitatibus, illum ratione porro, eum voluptatibus delectus non excepturi quae rem adipisci!
+    </div>
+
+</body>
+
+</html>

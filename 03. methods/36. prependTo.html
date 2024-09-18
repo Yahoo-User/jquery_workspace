@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>36. prependTo</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // The .prepend() and .prependTo() methods perform the same task.
+            // The major difference is in the syntax-specifically, in the placement of the content and target. 
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);    // HTMLDivElement
+
+            // ---
+
+            // 1.
+            $('<p>prependTo</p>').prependTo(inner);
+            // $('<p>prependTo</p>').prependTo('.inner');
+            // $('<p>prependTo</p>').prependTo( $('h2') );
+            // $('<p>prependTo</p>').prependTo('h2');
+
+            // 2.
+            // $('h2').prependTo(inner);
+            // $('h2').prependTo('.inner');
+
+            // 3. 
+            // $('h2').prependTo([inner, '.container']);
+            // $('h2').prependTo(['.inner', '.container']);
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>36. prependTo()</h1>
+
+    <hr>
+    
+
+    <h2>Greetings</h2>
+
+    <div class="container">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

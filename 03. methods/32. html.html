@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>31. html</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            var p = $('#list');
+            console.debug('p:', p, p[0].constructor.name);    // HTMLUListElement
+
+            // ---
+
+            // 1.
+            var oldHtml = p.html();
+            console.log(`oldHtml: ${oldHtml}`);
+
+            // 2.
+            // var newHtml = '<li>A</li><li>B</li>';
+            // p.html(newHtml);
+
+            // 3.
+            // p.html(function () {
+            //     return '<li>A</li><li>B</li>';
+            // });
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>31. html()</h1>
+
+    <hr>
+    
+    
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+
+
+
+</body>
+
+</html>

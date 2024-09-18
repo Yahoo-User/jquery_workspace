@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>49. css</title>
+
+    <style>
+        .container {
+            box-sizing: border-box;
+
+            width: 300px;
+            height: 300px;
+            border: 5px double red;
+
+            background-color: aquamarine;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // Get the value of a computed style property for the first element in the set of matched elements
+            // or set one or more CSS properties for every matched element.
+
+            var container = $('.container');
+            console.debug('container:', container, container[0].constructor.name);  // HTMLDivElement
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);              // HTMLDivElement
+
+            var h2 = $('h2');
+            console.debug('h2:', h2, h2[0].constructor.name);                       // HTMLHeadingElement
+
+            // ---
+
+            // 1.
+            var width = container.css('width');
+            var height = container.css('height');
+            var boxSizing = container.css('box-sizing');
+
+            console.log('width:', width, ', height:', height, ', boxSizing:', boxSizing);
+
+            // 2.
+            // var styles = container.css(['box-sizing', 'width', 'height']);
+
+            // console.log('styles:', styles, styles.constructor.name);
+
+            // 3.
+            // container.css('box-sizing', 'content-box');
+            // container.css('width', '200px');
+            // container.css('height', '200px');
+
+            // 4.
+            // container.css('width', function () {
+            //     console.log('this:', this, this.constructor.name);      // HTMLDivElement
+            //     return '200px';
+            // });
+
+            // 5.
+            // inner.css('width', function (index, value) {
+            //     console.log(`css(${index}, ${value}) invoked.`);
+            //     return 100;
+            // });
+            // inner.css('height', function (index, value) {
+            //     console.log(`css(${index}, ${value}) invoked.`);
+            //     return 100;
+            // });
+            // inner.css('border', function (index, value) {
+            //     console.log(`css(${index}, ${value}) invoked.`);
+            //     return '1px solid blue';
+            // });
+
+            // 6.
+            // inner.css({
+            //     width: '100px',
+            //     height: '100px',
+            //     border: '1px dotted red',
+            //     backgroundColor: 'silver'
+            // });
+
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>49. css()</h1>
+
+    <hr>
+    
+
+    <h2 class="title">Greetings</h2>
+
+    <div class="container">
+        <div class="inner inner2">Hello</div>
+        <div class="inner inner2 inner3">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

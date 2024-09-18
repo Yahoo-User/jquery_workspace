@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>jq01</title>
+
+    <!-- query -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+    
+
+    <script defer crossorigin="anonymous">
+        console.clear(); console.group('jq01');
+        console.time('Elapsed time');
+        // ======================================================
+
+        console.log(`01. jQuery : ${jQuery}`);
+        console.log(`02. typeof jQuery : ${typeof jQuery}`);
+        console.log(`03. jQuery instanceof Function : ${jQuery instanceof Function}`);
+
+        // ---
+
+        console.log(`04. $ : ${$}`);
+        console.log(`05. typeof $ : ${typeof $}`);
+        console.log(`06. $ instanceof Function : ${$ instanceof Function}`);
+
+        // ---
+
+        console.log(`07. jQuery == $ : ${jQuery == $}`);
+        console.log(`08. jQuery === $ : ${jQuery === $}`);
+
+        // ---
+
+        console.log(`09. window.jQuery === jQuery : ${window.jQuery === jQuery}`);
+        console.log(`10. window.$ === $ : ${window.$ === $}`);
+        console.log(`11. window.jQuery === window.$ : ${window.jQuery === window.$}`);
+        
+        // ======================================================
+        console.timeEnd('Elapsed time');
+        console.groupEnd();
+    </script>
+</head>
+
+<body>
+
+    <h1>jq01.html</h1>
+
+    <hr>
+
+</body>
+
+</html>

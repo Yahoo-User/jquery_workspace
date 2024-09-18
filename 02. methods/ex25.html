@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex25</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            var arr1 = [ 1, 2, 3, 3, 4, 5 ];
+            var arr2 = [ 6, 7, 8, 9, 0 ];
+
+            var obj = {
+                name: 'NAME',
+                age: 23
+            };
+
+            console.log('1. arr1:', arr1);
+            console.log('2. arr2:', arr2);
+            console.log('3. obj:', obj);
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQueryStatic.inArray<number>(value: number, array: number[], fromIndex?: number): number
+            //------------------------------------------------------------------------------//
+            var index = $.inArray(3, arr1);
+            // var index = $.inArray(3, arr1, 3);
+
+            console.log(`4. Index of 3: ${index}`);
+
+            
+            //------------------------------------------------------------------------------//
+            // (method) JQueryStatic.isArray(obj: any): boolean
+            //------------------------------------------------------------------------------//
+            var isArray = $.isArray(arr2);
+            // var isArray = $.isArray(obj);
+
+            console.log(`5. isArray: ${isArray}`);
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQueryStatic.merge<number>(first: number[], second: number[]): number[]
+            //------------------------------------------------------------------------------//
+            var arr3 = $.merge(arr1, arr2);
+
+            console.log('6. arr3:', arr3);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

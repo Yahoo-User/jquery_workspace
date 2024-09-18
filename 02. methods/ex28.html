@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex28</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            $('#wrap p:hidden').css({
+                display: 'block',
+                border: '5px solid purple'
+            });
+
+
+            // (method) JQuery.val(): any
+            var zone1 = $('#zone1 :selected').val();
+            console.log(`1. zone1: ${zone1}`);
+
+            var zone2 = $('#zone2 :checked').val();
+            console.log(`2. zone2: ${zone2}`);
+
+            var zone3 = $('#zone3 :checked').val();
+            console.log(`3. zone3: ${zone3}`);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <div id="wrap">
+        <p>paragraph_1</p>
+        <p style="display: none;">paragraph_2</p>
+        <p>paragraph_3</p>
+    </div>
+
+    <form action="#">
+        <p id="zone1">
+            <select name="course" id="course">
+                <option value="OPT1">option1</option>
+                <option value="OPT2" selected>option2</option>
+                <option value="OPT3">option3</option>
+            </select>
+        </p>
+
+        <p id="zone2">
+            <input type="checkbox" name="hobby" value="ITEM1">item1
+            <input type="checkbox" name="hobby" value="ITEM2">item2
+            <input type="checkbox" name="hobby" value="ITEM3" checked>item3
+        </p>
+
+        <p id="zone3">
+            <input type="radio" name="gender" value="ITEM1">item1
+            <input type="radio" name="gender" value="ITEM2" checked>item2
+        </p>
+    </form>
+
+</body>
+</html>

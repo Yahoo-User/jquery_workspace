@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jq06</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear();
+            console.group('jquery started.');
+
+            console.log('1. this:', this);
+            console.log(`2. typeof this: ${typeof this}`);
+            console.log(`3. this instanceof HTMLDocument : ${this instanceof HTMLDocument}`);
+            console.log('4. this.constructor :', this.constructor);
+            console.log('5. this.constructor.name :', this.constructor.name);
+
+            console.log(HTMLDocument.prototype);
+
+            console.groupEnd();
+        }); // .jq
+        
+    </script>    
+</head>
+
+<body>
+
+    <h1>jq06.html</h1>
+
+    <hr>
+
+
+</body>
+
+</html>

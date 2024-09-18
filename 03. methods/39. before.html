@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>39. before</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // Insert content, specified by the parameter, before each element in the set of matched elements.
+
+            var container = $('.container');
+            console.debug('container:', container, container[0].constructor.name);  // HTMLDivElement
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);              // HTMLDivElement
+
+            var h2 = $('h2');
+            console.debug('h2:', h2, h2[0].constructor.name);                       // HTMLHeadingElement
+
+            // ---
+
+            // 1.
+            inner.before('<p>before</p>');
+            // h2.before(container);
+
+            // 2.
+            // h2.before([container]);
+            // h2.before([container, inner]);
+
+            // 3. 
+            // inner.before(function () {
+            //     console.debug('before invoked.');
+
+            //     return '<p>before</p>';
+            // });
+
+            // 4.
+            // inner.before(function (index, html) {
+            //     console.debug(`before(${index}, ${html}) invoked.`);
+
+            //     return `<p>${index}.${html}</p>`;
+            // });
+
+
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>39. before()</h1>
+
+    <hr>
+    
+
+    <h2>Greetings</h2>
+
+    <div class="container">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

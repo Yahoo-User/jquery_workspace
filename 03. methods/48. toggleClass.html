@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>48. toggleClass</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // Add or remove one or more classes from each element in the set of matched elements,
+            // depending on either the class's presence or the value of the state argument.
+
+            var container = $('.container');
+            console.debug('container:', container, container[0].constructor.name);  // HTMLDivElement
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);              // HTMLDivElement
+
+            var h2 = $('h2');
+            console.debug('h2:', h2, h2[0].constructor.name);                       // HTMLHeadingElement
+
+            // ---
+
+            var state = false;
+
+            setInterval(function () {
+                console.debug('setInterval() invoked.');
+                
+                state = !state;
+                console.log(`\t+ state: ${state}`);
+
+
+                // 1.
+                h2.toggleClass('title');
+                // h2.toggleClass('title', state);
+
+                // 2.
+                // h2.toggleClass();
+                // inner.toggleClass();
+                // inner.toggleClass(state);
+
+                // 3.
+                // inner.toggleClass('inner inner2');
+                // inner.toggleClass(['inner', 'inner2', 'inner3']);
+                // container.toggleClass(['container']);
+                // container.toggleClass(['container'], state);
+
+                // 4. 
+                // inner.toggleClass(function () {
+                //     console.debug('toggleClass() invoked.');
+                //     console.log('\t+ this:', this, this.constructor.name);
+
+                //     // return 'inner';
+                //     // return 'inner inner2';
+                //     return ['inner', 'inner3', 'inner4'];
+                // });
+
+                // 5.
+                // inner.toggleClass(function (index, className) {
+                //     console.debug(`toggleClass(${index}, ${className}) invoked.`);
+                //     console.log('\t+ this:', this, this.constructor.name);
+
+                //     // return 'inner';
+                //     // return 'inner inner2';
+                //     return ['inner', 'inner3', 'inner4'];
+                // });
+
+            }, 1000);
+
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>48. toggleClass()</h1>
+
+    <hr>
+    
+
+    <h2 class="title">Greetings</h2>
+
+    <div class="container">
+        <div class="inner inner2">Hello</div>
+        <div class="inner inner2 inner3">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

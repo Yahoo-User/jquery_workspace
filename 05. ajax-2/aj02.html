@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>aj02</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script defer>
+        console.clear();
+
+        $(() => {
+
+            $('#submit').click((e) => {
+                e.preventDefault();
+
+                let serializedStr = $('#form1').serialize();
+                console.log(`serializedStr: ${serializedStr}`);
+
+                let paramStr = $.param({name: 'Yoseph', age: 23});
+                console.log(`paramStr: ${paramStr}`);
+            });
+
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>aj02.html</h1>
+
+    <hr>
+
+    <form action="#" id="form1">
+        1. name: <input type="text" name="name"> <br>
+        2. age: <input type="number" name="age">
+
+        <p></p>
+
+        <input type="submit" value="submit" id="submit">
+    </form>
+
+</body>
+
+</html>

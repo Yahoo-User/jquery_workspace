@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>6. fadeToggle</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(window).load(function () {
+            console.clear(); console.group('6. fadeToggle() method.');
+            // -------------------------------------------------------
+            
+
+            var img = $('img');
+
+            // ---
+
+            setInterval(function () {
+                console.log('\t+ Timed out.');
+                
+                // 1.
+                // img.fadeToggle();
+                // img.fadeToggle('slow');
+                // img.fadeToggle('fast');
+                // img.fadeToggle(1000);       // in millseconds.
+
+                // 2.
+                // img.fadeToggle(function () {
+                // img.fadeToggle('slow', function () {
+                // img.fadeToggle('fast', function () {
+                // img.fadeToggle(1000, function () {
+                //     console.log('\t+ Done.');
+                // }); // .fadeToggle
+
+                // 3.
+                // img.fadeToggle('slow', 'swing', function () {
+                // img.fadeToggle('fast', 'linear', function () {
+                img.fadeToggle(1000, 'linear', function () {
+                    console.log('\t+ Done.');
+                }); // .fadeToggle
+
+            }, 3000);
+
+
+            // -------------------------------------------------------
+            console.groupEnd();
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>6. fadeToggle() method</h1>
+
+    <hr>
+
+    <img src="https://picsum.photos/600/400">
+
+</body>
+
+</html>

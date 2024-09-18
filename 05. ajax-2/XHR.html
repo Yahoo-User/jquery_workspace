@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XHR</title>
+
+    <script defer crossorigin="anonymous" referrerpolicy="no-referrer">
+        console.clear()
+
+        // XMLHttpRequest(): XMLHttpRequest
+        const xhr = new XMLHttpRequest()
+        xhr.timeout = 1000;
+        xhr.withCredentials = false;
+
+        xhr.onreadystatechange = () => {
+            console.debug('onreadystatechange invoked.')
+            console.log(xhr)
+
+            switch(xhr.readyState) {
+                case 0: console.log(0, 'Un-initialized.'); break
+                case 1: console.log(1, 'Initialized.'); break
+                case 2: console.log(2, 'Sent Request.'); break
+                case 3: console.log(3, 'Receving Reponse.'); break
+                case 4: 
+                    console.log(4, 'Complete Response.');
+                    console.log(xhr.responseXML)
+
+                    break
+            }
+        }
+
+        xhr.onloadstart = () => console.debug('onloadstart invoked.')
+        xhr.onloadend = () => console.debug('onloadend invoked.')
+
+        xhr.onload = () => console.debug('onload invoked.')
+
+        xhr.onabort = () => console.debug('onabort invoked.')
+        xhr.onerror = () => console.debug('onerror invoked.')
+        xhr.onprogress = () => console.debug('onprogress invoked.')
+        xhr.ontimeout = () => console.debug('ontimeout invoked.')
+
+        // 1. open(method: string, url: string | URL): void
+        // 2. open(method: string, url: string | URL, async: boolean, username?: string, password?: string): void
+        xhr.open('get', 'http://localhost:8080/persons.xml', true)        
+
+        // send(body?: Document | XMLHttpRequestBodyInit): void
+        xhr.send()
+            
+
+    </script>
+</head>
+
+<body>
+
+    <h1>XHR.html</h1>
+
+    <hr>
+
+
+</body>
+
+</html>

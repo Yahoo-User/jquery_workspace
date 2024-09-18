@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex30</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.find(selector: string): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section1').find('.txt1').css({ border: '5px solid purple' });
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.filter(selector: string): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section1 p').filter('.txt2').css({ border: '5px solid blue' });
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.filter(func: (index: number, element: Element) => any): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section2 p').filter(function (index, element) {
+                console.log(`index: ${index}, element:`, element);
+
+                return index % 2 == 0;              // filtering condition
+            }).css({ border: '5px outset gold' });
+
+        }); // .jq
+
+    </script>
+</head>
+<body>
+
+    <div id="container">
+        <h1>TITLE</h1>
+
+        <section id="section1">
+            <h2>SUB_TITLE1</h2>
+
+            <p class="txt1">paragraph_1</p>
+            <p class="txt2">paragraph_2</p>
+        </section>
+
+        <section id="section2">
+            <h2>SUB_TITLE2</h2>
+
+            <p>paragraph_3</p>
+            <p>paragraph_4</p>
+            <p>paragraph_5</p>
+            <p>paragraph_6</p>
+        </section>
+    </div>
+    
+</body>
+</html>

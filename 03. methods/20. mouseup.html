@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>20. mouseup</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear();
+
+            var btn = $('#btn');
+            console.log('btn:', btn, 'type:', btn[0].constructor.name);      // HTMLButtonElement
+
+            // ---
+
+            // 1. 
+            btn.mouseup(function (e) {
+                console.debug('Mouse left or right button up...');
+                console.log('\t+ e', e);
+            }); // .mouseup
+
+            // 2.
+            // btn.mouseup(false);           // Event ignored.
+
+            // btn.mouseup(function (e) {
+            //     console.debug('Mouse left or right button up. but IGNORED.');
+            //     console.log('\t+ e', e);
+            //     return false;
+            // }); // .mouseup
+
+            // 3.
+            // btn.mouseup('data', function (e) {
+            // btn.mouseup(100, function (e) {
+            // btn.mouseup(3.14159, function (e) {
+            // btn.mouseup(true, function (e) {
+            // btn.mouseup({ name: 'Yoseph', age: 23 }, function (e) {
+            // btn.mouseup([1, .3, false, 'Hello', [1,2,3], { age: 23} ], function (e) {
+            //     console.debug('Mouse left or right button up.');
+            //     console.log('\t+ e.data:', e.data);
+            // }); // .mouseup
+
+            // 4.
+            // btn.mouseup();                // Trigger a mouseup event.
+
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>20. mouseup() Method</h1>
+
+    <hr>
+
+
+    <button id="btn">When mouse left or right button UP !</button>
+
+</body>
+
+</html>

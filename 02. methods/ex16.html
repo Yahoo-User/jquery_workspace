@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            $('.txt1').closest('div').css({
+                'border': '5px solid purple'
+            });
+        }); // .jq
+
+    </script>
+</head>
+<body>
+
+    <h1 class="title">TITLE</h1>
+
+    <div>
+
+        <div>
+            <p class="txt1">paragraph</p>
+        </div>
+        
+    </div>
+
+</body>
+</html>

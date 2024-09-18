@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            var style_1 = {
+                'background-color': '#0ff',
+                'border': '5px solid purple'
+            };
+
+
+            // (method) JQuery.css(properties: Object): JQuery
+            // (method) JQuery.siblings(selector?: string): JQuery
+            $('.txt').siblings().css(style_1);
+            // $('.txt').siblings('p').css(style_1);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <div id="wrap">
+        <h1>TITLE</h1>
+
+        <p>paragraph_1</p>
+        <p class="txt">paragraph_2</p>
+        <p>paragraph_3</p>
+        <p>paragraph_4</p>
+    </div>
+
+</body>
+</html>

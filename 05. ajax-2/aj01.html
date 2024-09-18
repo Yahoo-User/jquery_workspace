@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>aj01</title>
+
+    <style>
+        div {
+            outline: 3px double blue;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" crossorigin="anonymous"></script>
+
+    <script defer>
+
+        $(function () {
+            console.clear();
+
+            // load(
+            //    url: string,
+            //    data?: string | Object,
+            //    complete?: (responseText: string, textStatus: string, XMLHttpRequest: XMLHttpRequest) => any
+            // ): JQuery
+            $('#news1').load('news.html #news1');
+            $('#news2').load('news.html #news2');
+        }); //.jq
+
+        // $('#news1').load('news.html #news1');        // XX
+        // $('#news2').load('news.html #news2');        // XX
+
+    </script>
+</head>
+
+<body>
+
+    <h1>aj01.html</h1>
+
+    <hr>
+
+    <h3>NEWS1</h3>
+    <div id="news1"></div>
+
+    <h3>NEWS2</h3>
+    <div id="news2"></div>
+
+</body>
+
+</html>

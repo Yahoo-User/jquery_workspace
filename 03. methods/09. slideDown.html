@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>9. slideDown</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(window).load(function () {
+            console.clear(); console.group('9. slideDown() method.');
+            // -------------------------------------------------------
+            
+
+            var img = $('img');
+
+            img.slideUp();
+            // ---
+
+            setTimeout(function () {
+                console.log('\t+ Timed out.');
+                
+                // 1.
+                // img.slideDown();
+                // img.slideDown('slow');
+                // img.slideDown('fast');
+                // img.slideDown(1000);
+
+                // 2.
+                // img.slideDown(function () {
+                // img.slideDown('slow', function () {
+                // img.slideDown('fast', function () {
+                // img.slideDown(1000, function () {
+                //     console.log('\t+ Done.');
+                // }); // .slideDown
+
+                // 3.
+                // img.slideDown('slow', 'swing');
+                // img.slideDown('fast', 'linear');
+                // img.slideDown(1000, 'linear');
+
+                // 4.
+                // img.slideDown('slow', 'swing', function () {
+                // img.slideDown('fast', 'linear', function () {
+                img.slideDown(1000, 'linear', function () {
+                    console.log('\t+ Done.');
+                }); // .slideDown
+
+            }, 3000);
+
+
+            // -------------------------------------------------------
+            console.groupEnd();
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>9. slideDown() method</h1>
+
+    <hr>
+
+    <img src="https://picsum.photos/600/400">
+
+</body>
+
+</html>

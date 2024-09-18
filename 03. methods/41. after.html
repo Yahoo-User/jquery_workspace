@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>41. after</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // Insert content, specified by the parameter, after each element in the set of matched elements.
+
+            var container = $('.container');
+            console.debug('container:', container, container[0].constructor.name);  // HTMLDivElement
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);              // HTMLDivElement
+
+            var h2 = $('h2');
+            console.debug('h2:', h2, h2[0].constructor.name);                       // HTMLHeadingElement
+
+            // ---
+
+            // 1.
+            inner.after('<p>after</p>');
+            // container.after(h2);
+
+            // 2.
+            // container.after([h2]);
+            // inner.after([h2, '<p>after</p>']);
+
+            // 3. 
+            // inner.after(function () {
+            //     console.debug('after invoked.');
+
+            //     return '<p>after</p>';
+            // });
+
+            // 4.
+            // inner.after(function (index, html) {
+            //     console.debug(`after(${index}, ${html}) invoked.`);
+
+            //     return `<p>${index}.${html}</p>`;
+            // });
+
+
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>41. after()</h1>
+
+    <hr>
+    
+
+    <h2>Greetings</h2>
+
+    <div class="container">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

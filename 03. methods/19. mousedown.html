@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>19. mousedown</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear();
+
+            var btn = $('#btn');
+            console.log('btn:', btn, 'type:', btn[0].constructor.name);      // HTMLButtonElement
+
+            // ---
+
+            // 1. 
+            btn.mousedown(function (e) {
+                console.debug('Mouse left button downed...');
+                console.log('\t+ e', e);
+            }); // .mousedown
+
+            // 2.
+            // btn.mousedown(false);           // Event ignored.
+
+            // btn.mousedown(function (e) {
+            //     console.debug('Mouse left button downed. but IGNORED.');
+            //     console.log('\t+ e', e);
+            //     return false;
+            // }); // .mousedown
+
+            // 3.
+            // btn.mousedown('data', function (e) {
+            // btn.mousedown(100, function (e) {
+            // btn.mousedown(3.14159, function (e) {
+            // btn.mousedown(true, function (e) {
+            // btn.mousedown({ name: 'Yoseph', age: 23 }, function (e) {
+            // btn.mousedown([1, .3, false, 'Hello', [1,2,3], { age: 23} ], function (e) {
+            //     console.debug('Mouse left button downed.');
+            //     console.log('\t+ e.data:', e.data);
+            // }); // .mousedown
+
+            // 4.
+            // btn.mousedown();                // Trigger a mousedown event.
+
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>19. mousedown() Method</h1>
+
+    <hr>
+
+
+    <button id="btn">Click Left Button & Keep</button>
+
+</body>
+
+</html>

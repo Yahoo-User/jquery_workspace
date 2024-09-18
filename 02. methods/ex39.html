@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex39</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        #container {
+            height: 5000px;
+            padding-top: 2000px;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            // (method) JQuery.offset(): JQueryCoordinates
+            var offsetTop = $('h1').offset().top;
+
+            console.log(`1. offsetTop: ${offsetTop}`);
+
+
+            // (method) JQuery.scrollTop(value: number): JQuery
+            $(window).scrollTop(offsetTop);
+
+            // (method) JQuery.scrollTop(): number
+            var scrollTop = $(window).scrollTop();
+
+            console.log(`2. scrollTop: ${scrollTop}`);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Positioning method</h1>
+    </div>
+    
+</body>
+</html>

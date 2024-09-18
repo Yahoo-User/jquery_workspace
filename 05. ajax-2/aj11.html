@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>aj11</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script defer>
+        console.clear()
+
+        // ajaxSetup(options: JQueryAjaxSettings): void
+        $.ajaxSetup({
+            async: true,
+            cache: false,
+            global: true,
+            timeout: 1000,
+            type: 'get',
+
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",       // Always added automatically
+                "Custom-Header1": "Custom-Value1",
+                "Custom-Header2": "Custom-Value2"
+            },
+
+            statusCode: {
+                200 : () => console.debug(`HTTP status code: 200`),
+                404 : () => console.debug(`HTTP status code: 404`)
+            },
+            
+            beforeSend: () => console.debug('1. beforeSend invoked.'),
+            complete: () => console.debug('3. complete invoked.'),
+
+            // (method) JQueryAjaxSettings.error?(jqXHR: JQueryXHR, textStatus: string, errorThrown: string): any
+            error: (jqXHR, textStatus, errorThrown) => {
+                console.debug('2. error invoked.')
+                console.log(`\t+ textStatus: ${textStatus}`)
+                console.log(`\t+ errorThrown: ${errorThrown}`)
+            }
+        })
+
+        // ------------------------------------- //
+
+        // get(url: string, success?: (data: any, textStatus: string, jqXHR: JQueryXHR) => any, dataType?: string): JQueryXHR
+        $.get('http://localhost:8080/persons.xml', (xml) => {
+            console.debug('2. success invoked.')
+            console.log('\t+ xml:', xml)
+
+        }, 'xml')
+    </script>
+</head>
+
+<body>
+
+    <h1>aj11.html</h1>
+
+    <hr>
+
+
+</body>
+
+</html>

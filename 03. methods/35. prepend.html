@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>35. prepend</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);    // HTMLDivElement
+
+            // ---
+
+            // 1.
+            inner.prepend('<p>prepend</p>');
+            // $('.inner').prepend('<p>prepend</p>');
+
+            // 2.
+            // inner.prepend( $('h2') );
+            // $('.inner').prepend( $('h2') );
+
+            // 3.
+            // inner.prepend( '<p>prepend</p>', $('h2') );
+            // $('.inner').prepend( '<p>prepend</p>', $('h2') );
+
+            // 4.
+            // inner.prepend(function () {
+            // $('.inner').prepend(function () {
+            //     return '<p>prepend</p>';
+            // });
+
+            // 5.
+            // inner.prepend(function (index, html) {
+            // $('.inner').prepend(function (index, html) {
+            //     console.log(`index: ${index}, html: ${html}`);
+            //     return '<p>prepend</p>';
+            // });
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>35. prepend()</h1>
+
+    <hr>
+    
+    
+    <h2>Greetings</h2>
+
+    <div class="container">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

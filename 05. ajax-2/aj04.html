@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>aj04</title>
+
+    <style>
+        table {
+            border-width: 1px;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script defer>
+
+        console.clear();
+
+        $.ajax('MOCK_DATA.json', {
+            async: true,
+            cache: true,
+            global: false,
+            crossDomain: true,
+            timeout: 1000,
+
+            type: 'get',
+            dataType: 'json',
+
+            beforeSend: () => console.debug('1. beforeSend invoked.'),
+            complete: () => console.debug('3. complete invoked.'),
+
+            dataFilter: (raw) => raw,
+
+            success: (arr) => {    // data: Javascript Object converted from JSON.
+                console.debug('2. success invoked.');
+                if(arr.length == 0) return
+
+                let tbl = $('<table>')
+                    tbl.attr('border', 1);
+
+                for(let p of arr) {
+                    let row =
+                        $('<tr>').append(
+                            $('<td>').append(p.id),
+                            $('<td>').append(p.first_name),
+                            $('<td>').append(p.last_name),
+                            $('<td>').append(p.gender),
+                            $('<td>').append(p.email),
+                            $('<td>').append(p.ip_address)
+                        )
+
+                    tbl.append(row)
+                } // for-of
+
+                $('#wrapper').append(tbl)
+            },
+
+            error: () => console.debug('2. error invoked.')
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <h1>aj04.html</h1>
+
+    <hr>
+
+    <div id="wrapper"></div>
+
+</body>
+
+</html>

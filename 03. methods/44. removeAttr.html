@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>44. removeAttr</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            // Remove an attribute from each element in the set of matched elements.
+
+            var container = $('.container');
+            console.debug('container:', container, container[0].constructor.name);  // HTMLDivElement
+
+            var inner = $('.inner');
+            console.debug('inner:', inner, inner[0].constructor.name);              // HTMLDivElement
+
+            var h2 = $('h2');
+            console.debug('h2:', h2, h2[0].constructor.name);                       // HTMLHeadingElement
+
+            // ---
+
+            // 1.
+            h2.removeAttr('id');
+            // container.removeAttr('attr');
+
+            
+            // 2.
+            // inner.removeAttr('attr1');
+
+            // 3.
+            // $('div').removeAttr('class');
+
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>44. removeAttr()</h1>
+
+    <hr>
+    
+
+    <h2 id="title">Greetings</h2>
+
+    <div class="container" attr="value">
+        <div class="inner" attr1="value1" attr2="value2">Hello</div>
+        <div class="inner" attr3="value3">Goodbye</div>
+    </div>
+
+</body>
+
+</html>

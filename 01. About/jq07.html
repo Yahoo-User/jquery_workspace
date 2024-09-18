@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jq07</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear();
+
+            // 1
+            var result = $('#txt').css('color', 'red');
+
+            // 2
+            // var result = $('#txt').css({
+            //     color: 'purple',
+            //     fontWeight: 'bold'
+            // }); // .css
+
+            console.log('1. typeof result :', typeof result);
+            console.log('2. result === jQuery :', result === jQuery);
+            console.log('3. result instanceof jQuery :', result instanceof jQuery);
+            console.log('4. jQuery.prototype :', jQuery.prototype);
+            console.log('5. jQuery.prototype.constructor :', jQuery.prototype.constructor);
+
+            console.dir(result);
+
+            console.log(result.constructor);
+            console.log(result.constructor.name);
+            console.log(result.constructor === $, result.constructor === jQuery);
+        }); // .jq
+
+    </script>    
+</head>
+
+<body>
+
+    <h1>jq07.html</h1>
+
+    <hr>
+
+    <p id="txt">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+
+</body>
+
+</html>

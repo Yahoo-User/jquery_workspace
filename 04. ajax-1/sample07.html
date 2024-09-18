@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample07</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(function () {
+
+            //-----------------------------------------------------//
+
+            // $.ajax({
+
+            //     async: true,
+            //     timeout: 1000,
+            //     cache: true,
+
+            //     type: 'get',
+            //     url: 'persons.json',
+
+            //     success: function (data, textStatus, jqXHR) {
+            //         console.log('- sunccess invoked.');
+
+            //         console.log('\t+ textStatus:', textStatus);
+            //         console.log('\t+ jqXHR:', jqXHR);
+            //         console.log('\t+ data:', data);
+
+
+            //     },
+
+            // }); // $.ajax
+
+            //-----------------------------------------------------//
+
+
+            // $.get({
+
+            //     async: true,
+            //     timeout: 1000,
+            //     cache: true,
+
+            //     url: 'persons.json',
+            //     dataType: 'json',
+
+            //     success: function (data, textStatus, jqXHR) {
+            //         console.log('- sunccess invoked.');
+
+            //         console.log('\t+ textStatus:', textStatus);
+            //         console.log('\t+ jqXHR:', jqXHR);
+            //         console.log('\t+ data:', data);
+
+                    
+            //         $.each(data, function (index, obj) {
+            //             let p = $('<p/>').text(`id: ${obj.id}, first_name: ${obj.first_name}, last_name: ${obj.last_name}, gender: ${obj.gender}, ip_addr: ${obj.ip_address}`);
+                        
+            //             $('#wrapper').append(p);
+            //         });
+            //     },
+
+            // }); // $.get
+
+            //-----------------------------------------------------//
+
+            // $.post({
+
+            //     async: true,
+            //     timeout: 1000,
+            //     cache: false,
+
+            //     url: 'persons.json',
+            //     dataType: 'json',
+
+
+            //     success: function (data, textStatus, jqXHR) {
+            //         console.log('- sunccess invoked.');
+
+            //         console.log('\t+ textStatus:', textStatus);
+            //         console.log('\t+ jqXHR:', jqXHR);
+            //         console.log('\t+ data:', data);
+
+                    
+            //         $.each(data, function (index, obj) {
+            //             let p = $('<p/>').text(`id: ${obj.id}, first_name: ${obj.first_name}, last_name: ${obj.last_name}, gender: ${obj.gender}, ip_addr: ${obj.ip_address}`);
+                        
+            //             $('#wrapper').append(p);
+            //         });
+            //     }
+
+            // }); // $.post
+
+            //-----------------------------------------------------//
+
+            // $.getJSON('http://localhost:8080/persons.json', function (data, textStatus, jqXHR) {
+            //     console.log('- success invoked.');
+                
+            //     console.log('\t+ data:', data);
+            //     console.log('\t+ textStatus:', textStatus);
+            //     console.log('\t+ jqXHR:', jqXHR);
+
+            // }); // $.getJSON
+
+            //-----------------------------------------------------//
+
+            // $('#wrapper').load('news.html#news1', function (responseText, textStatus, xhr) {
+            //     console.log('- load invoked.');
+                
+            //     console.log('\t+ textStatus:', textStatus);
+            //     console.log('\t+ xhr:', xhr);
+            //     console.log('\t+ responseText:', responseText);
+
+            //     // $('#wrapper').html(responseText);
+                
+            // }); // load
+
+            //-----------------------------------------------------//
+
+            $.getScript('test.js', function (script, textStatus, jqXHR) {
+                console.log('- getScript invoked.');
+                
+                console.log('\t+ textStatus:', textStatus);
+                console.log('\t+ jqXHR:', jqXHR);
+                console.log('\t+ script:', script);
+
+
+                
+            }); // $.getScript
+
+        }); // jq
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper"></div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            // (method) JQuery.css(propertyName: string, value: string | number): JQuery
+            
+            // (method) JQuery.parent(selector?: string): JQuery
+            $('#list_1').parent().css('border', '5px solid purple');
+
+            // (method) JQuery.next(selector?: string): JQuery
+            $('#list_1').parent().parent().next().next().css('border', '5px solid red');
+
+            // (method) JQuery.prev(selector?: string): JQuery
+            $('#list_3').prev().css('border', '5px dotted blue');
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <h1>TITLE</h1>
+
+    <ul id="wrap">
+        <li>item1
+
+            <ul>
+                <li id="list_1">item1_1</li>
+                <li>item1_2</li>
+            </ul>
+
+        </li>
+        <li>item2</li>
+        <li id="list_3">item3</li>
+    </ul>
+
+</body>
+</html>

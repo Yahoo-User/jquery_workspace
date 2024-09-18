@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex21</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            $('#menu1 li:nth-child(1)').css({ border: '5px solid purple' });        // N starts with 1
+            // $('#menu li').nth-child(1).css({ border: '5px solid purple' });      // XX
+
+            $('#menu1 li:nth-child(2n)').css({ border: '5px solid blue' });         // 2n: even
+
+            $('#menu2 li:nth-last-child(2)').css({ border: '5px solid red' });      // N starts with 1
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <h1>TITLE</h1>
+
+    <ul id="menu1">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+    </ul>
+
+</body>
+</html>

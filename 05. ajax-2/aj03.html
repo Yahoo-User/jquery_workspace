@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>aj03</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script defer>
+        console.clear();
+        
+        var obj = { name: 'Yoseph', age:23 };
+
+        let queryString = $.param(obj);
+        console.log(`1. queryString: ${queryString}`);
+
+        // ajax(url: string, settings?: JQueryAjaxSettings): JQueryXHR
+        $.ajax('MOCK_DATA.json', {
+
+            // By default, all requests are sent asynchronously (i.e. this is set to true by default).
+            // If you need synchronous requests, set this option to false.
+            // Cross-domain requests and dataType: "jsonp" requests do NOT support synchronous operation.
+            async: true,
+
+            // If set to false, it will force requested pages NOT to be cached by the browser.
+            // Note: Setting cache to false will only work correctly with HEAD and GET requests.
+            cache: true,
+
+            // Set a timeout (in milliseconds) for the request.
+            // This will override any global timeout set with $.ajaxSetup().
+            timeout: 1000,
+
+            // If you wish to force a crossDomain request (such as JSONP) on the same domain, set the value of crossDomain to true.
+            // This allows, for example, server-side redirection to another domain. (version added: 1.5)
+            crossDomain: true,
+
+            // Whether to trigger global Ajax event handlers for this request.
+            // The default is true. Set to false to prevent the global handlers like ajaxStart or ajaxStop from being triggered.
+            // This can be used to control various Ajax Events.
+            global: true,
+
+            // The type of request to make ("POST" or "GET"), default is "GET".
+            // Note: Other HTTP request methods, such as PUT and DELETE, can also be used here, 
+            // but they are NOT supported by all browsers.
+            type: 'get',
+
+            // Data to be sent to the server.
+            // It is converted to a query string, if NOT already a string.
+            // It's appended to the url for GET-requests.
+            // See processData option to prevent this automatic processing.
+            // Object must be Key/Value pairs.
+            // If value is an Array, jQuery serializes multiple values with same key based on the value of the traditional setting
+            data: queryString,
+
+            // A function to be used to handle the raw response data of XMLHttpRequest.
+            // This is a pre-filtering function to sanitize the response.
+            // You should return the sanitized data.
+            // The function accepts two arguments: The raw data returned from the server and the 'dataType' parameter.
+            dataFilter: (raw, dataType) => {
+                console.debug('dataFilter invoked.');
+                console.log('dataType:', dataType);
+                console.log('raw:', raw);
+
+                return raw;
+            },
+
+            // The type of data that you're expecting back from the server.
+            // If none is specified, jQuery will try to infer it based on the MIME type of the response.
+
+            // contentType: "application/x-www-form-urlencoded; charset=UTF-8", // default if POST method.
+            dataType: "json",    // "html", "xml", "json", "text", "jsonp"
+
+            // (method) JQueryAjaxSettings.beforeSend?(jqXHR: JQueryXHR, settings: JQueryAjaxSettings): any
+            // beforeSend: () => console.debug('beforeSend invoked.'),
+            beforeSend: (jqXHR, settings) => {
+                console.debug('beforeSend invoked.');
+                console.log('settings:', settings);
+            },
+
+            // (method) JQueryAjaxSettings.complete?(jqXHR: JQueryXHR, textStatus: string): any
+            complete: (jqXHR, textStatus) => {
+                console.debug('complete invoked.');
+                console.log('\t+ jqXHR:', jqXHR);
+                console.log(`\t+ status: ${textStatus}`);
+            },
+            
+            // (method) JQueryAjaxSettings.error?(jqXHR: JQueryXHR, textStatus: string, errorThrown: string): any
+            error: (jqXHR, textStatus, errorThrown) => {
+                console.debug('error invoked.');
+                console.log(`\t+ textStatus: ${textStatus}`);
+                console.log(`\t+ errorThrown: ${errorThrown}`);
+                console.log('\t+ jqXHR:', jqXHR);
+            },
+
+            // (method) JQueryAjaxSettings.success?(data: any, textStatus: string, jqXHR: JQueryXHR): any
+            success: (data, textStatus, jqXHR) => {
+                console.debug('success invoked.');
+                console.log(`\t+ textStatus: ${textStatus}`);
+                console.log('\t+ jqXHR:', jqXHR);
+                console.log('\t+ data:', data);
+            },
+
+        }); // $.ajax
+        
+    </script>
+
+</head>
+
+<body>
+
+    <h1>aj03.html</h1>
+
+    <hr>
+
+
+</body>
+
+</html>

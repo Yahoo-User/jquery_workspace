@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex29</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            //------------------------------------------------------------------------------//
+            $('#section1 p:contains(paragraph_1)').css({ border: '5px solid purple' });
+            // $('#section1 p').contains('paragraph_1').css({ border: '5px solid purple' });    // XX
+            //------------------------------------------------------------------------------//
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.contents(): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section1 p').contents().css({ border: '5px solid blue' });
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.has(selector: string): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section1 p').has('strong').css({ border: '5px solid red' });
+            // $('#section1 p:has(strong)').css({ border: '5px solid red' });
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.not(selector: string): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section2 p').not(':first').css({ border: '5px outset gold' });
+            // $('#section2 p:not(:first)').css({ border: '5px outset gold' });
+
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.end(): JQuery
+            // (method) JQuery.eq(index: number): JQuery
+            //------------------------------------------------------------------------------//
+            $('#section2 p:first').eq(2).end().css({ border: '5px inset blue' });
+
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <div id="container">
+        <h1>TITLE</h1>
+
+        <section id="section1">
+            <h1>SUB TITLE1</h1>
+
+            <p><span>paragraph_1</span></p>
+            <p><strong>paragraph_2</strong></p>
+            <p><span>paragraph_3</span></p>
+        </section>
+
+        <section id="section2">
+            <h1>SUB TITLE2</h1>
+
+            <p>paragraph_4</p>
+            <p>paragraph_5</p>
+            <p>paragraph_6</p>
+        </section>
+    </div>
+
+</body>
+</html>

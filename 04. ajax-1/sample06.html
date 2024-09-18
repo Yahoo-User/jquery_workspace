@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample06</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            console.clear(); console.log('- jquery started..........');
+
+
+            var jqXHR = 
+                $.ajax({
+                    async: true,
+                    cache: false,
+                    timeout: 0,
+                    crossDomain: true,
+
+                    type: 'get',
+                    url: 'http://localhost:8080/persons.json',
+                    dataType: 'json',
+
+
+                    beforeSend: function (jqXHR, settings) {
+                        console.log('- beforeSend invoked.');
+
+                    },
+
+                    success: function (data, textStatus, jqXHR) {
+                        console.log('- success invoked.');
+                        
+                    },
+
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log('- error invoked.');
+
+                        console.log('\t+ jqXHR', jqXHR);
+                        console.log('\t+ textStatus:', textStatus);
+                        console.log('\t+ errorThrow:', errorThrown);
+
+                    },
+
+                    complete: function (jqXHR, textStatus) {
+                        console.log('- complete invoked.')
+
+
+                    }
+
+                }); // $.ajax
+            
+        }); // jq
+
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper"></div>
+</body>
+
+</html>

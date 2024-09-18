@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex34</title>
+
+    <style>
+
+        .aqua {
+            border: 5px solid aqua;
+        }
+        .red {
+            border: 5px solid red;
+        }
+        .green {
+            border: 5px solid green;
+        }
+        .yellow {
+            border: 5px solid yellow;
+        }
+        .blue {
+            border: 5px solid blue;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.addClass(className: string): JQuery
+            //------------------------------------------------------------------------------//
+            $('#p1').addClass('aqua');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.removeClass(className?: string): JQuery
+            //------------------------------------------------------------------------------//
+            $('#p2').removeClass('red');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.toggleClass(className: string, swtch?: boolean): JQuery
+            //------------------------------------------------------------------------------//
+            $('#p3').toggleClass('green');
+            $('#p4').toggleClass('green');
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.text(text: string | number | boolean): JQuery
+            // (method) JQuery.hasClass(className: string): boolean
+            //------------------------------------------------------------------------------//
+            var hasClass = $('#p6').text($('#p5').text()).hasClass('yellow');
+            console.log(`- hasClass: ${hasClass}`);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+
+    <p id="p1">paragraph_1</p>
+    <p id="p2" class="red">paragraph_2</p>
+    <p id="p3">paragraph_3</p>
+    <p id="p4" class="green">paragraph_4</p>
+    <p id="p5" class="blue">paragraph_5</p>
+    <p id="p6"></p>
+    
+</body>
+</html>

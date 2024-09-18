@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>15. on</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    <style>
+        div#wrapper {
+            box-sizing: border-box;
+
+            width: 200px;
+            height: 200px;
+            border: 5px ridge red;
+            margin-top: 30px;
+            margin-left: 30px;
+
+            background-color: aqua;
+        }
+    </style>
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear(); console.group('15. on() method.');
+            // -------------------------------------------
+
+
+            var wrapper = $('div#wrapper');
+            console.log(wrapper, wrapper[0], wrapper[0].constructor.name);      // HTMLDivElement
+
+            // ---
+
+            // 1. on(events: string, handler: (eventObject: JQueryEventObject, ...args: any[]) => any): JQuery
+            // on(events: string, selector: string, handler: (eventObject: JQueryEventObject, ...eventData: any[]) => any): JQuery
+            
+            // 1.
+            wrapper.on('click', function (e) {
+            // wrapper.on('click mouseenter', function (e) {   // one or more space-separated event types
+                console.log('event triggered.');
+                console.log('\t+ e.data:', e.data);
+            }); // .on
+
+            // 2.
+            // var link = $('a#naver');
+
+            // link.on('click', false);         // ignore the event.
+
+            // link.on('click', function (e) {
+            //     console.log('Event triggered: IGNORED.');
+            //     return false;                // ignore the event.
+            // }); // .on
+
+            // 3.
+            // wrapper.on('click', '#btn', function (e) {
+            // wrapper.on('click', null, function (e) {
+            // wrapper.on('click', function (e) {
+            //     console.log('Event triggered.');
+            // }); // .on
+
+            // 4.
+            // wrapper.on('click', null, 'data', function (e) {
+            // wrapper.on('click', null, 100, function (e) {
+            // wrapper.on('click', null, 3.14159, function (e) {
+            // wrapper.on('click', null, false, function (e) {
+            // wrapper.on('click', null, { name: 'Yoseph', age: 23 }, function (e) {
+            // wrapper.on('click', null, [1,2,3], function (e) {
+            //     console.log('Clicked...');
+            //     console.log('\t+ e.data:', e.data);
+            // }); // .on
+
+            
+            // -------------------------------------------
+            console.groupEnd();
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>15. on() method</h1>
+
+    <hr>
+    
+    <div id="wrapper">
+        <button id="btn">Click</button>
+    </div>
+
+    <br>
+
+    <a href="www.naver.com" id="naver">NAVER</a>
+
+
+</body>
+
+</html>

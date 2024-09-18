@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>24. mouseenter</title>
+
+    <style>
+        #btn {
+            box-sizing: border-box;
+
+            width: 200px;
+            height: 100px;
+            border: 5px ridge purple;
+            background-color: skyblue;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear();
+
+            var btn = $('#btn');
+            console.log('btn:', btn, 'type:', btn[0].constructor.name);      // HTMLButtonElement
+
+            // ---
+
+            // The mouseenter JavaScript event is proprietary to Internet Explorer.
+            // Because of the event's general utility, jQuery simulates this event so that it can be used regardless of browser.
+            // This event is sent to an element when the mouse pointer enters the element.
+            // Any HTML element can receive this event.
+
+            // 1. 
+            btn.mouseenter(function (e) {
+                console.debug('When the mouse pointer enters the element...');
+                console.log('\t+ e', e);
+            }); // .mouseenter
+
+            // 2.
+            // btn.mouseenter(false);           // Event ignored.
+
+            // btn.mouseenter(function (e) {
+            //     console.debug('When the mouse pointer enters the element. but IGNORED.');
+            //     console.log('\t+ e', e);
+            //     return false;
+            // }); // .mouseenter
+
+            // 3.
+            // btn.mouseenter('data', function (e) {
+            // btn.mouseenter(100, function (e) {
+            // btn.mouseenter(3.14159, function (e) {
+            // btn.mouseenter(true, function (e) {
+            // btn.mouseenter({ name: 'Yoseph', age: 23 }, function (e) {
+            // btn.mouseenter([1, .3, false, 'Hello', [1,2,3], { age: 23} ], function (e) {
+            //     console.debug('When the mouse pointer enters the element...');
+            //     console.log('\t+ e.data:', e.data);
+            // }); // .mouseenter
+
+            // 4.
+            // btn.mouseenter();                // Trigger a mouseenter event.
+
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>24. mouseenter() Method</h1>
+
+    <hr>
+
+
+    <button id="btn">When the mouse pointer enters the element...</button>
+
+</body>
+
+</html>

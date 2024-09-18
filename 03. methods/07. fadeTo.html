@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>7. fadeTo</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(window).load(function () {
+            console.clear(); console.group('7. fadeTo() method.');
+            // -------------------------------------------------------
+            
+
+            var img = $('img');
+
+            // ---
+
+            setTimeout(function () {
+                console.log('\t+ Timed out.');
+                
+                // 1.
+                img.fadeTo();                           // No effect.
+                // img.fadeTo('slow', .3);
+                // img.fadeTo('fast', .3);
+                // img.fadeTo(1000, .3);
+
+                // 2.
+                // img.fadeTo('slow', .3, function () {
+                // img.fadeTo('fast', .3, function () {
+                // img.fadeTo(1000, .3, function () {
+                //     console.log('\t+ Done.');
+                // }); // .fadeTo
+
+                // 3.
+                // img.fadeTo('slow', .3, 'swing');
+                // img.fadeTo('fast', .3, 'linear');
+                // img.fadeTo(1000, .3, 'swing');
+
+                // 4.
+                // img.fadeTo('slow', .3, 'swing', function () {
+                // img.fadeTo('fast', .3, 'linear', function () {
+                // img.fadeTo(1000, .3, 'swing', function () {
+                //     console.log('\t+ Done.');
+                // }); // .fadeTo
+
+            }, 3000);
+
+
+            // -------------------------------------------------------
+            console.groupEnd();
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>7. fadeTo() method</h1>
+
+    <hr>
+
+    <img src="https://picsum.photos/600/400">
+
+</body>
+
+</html>

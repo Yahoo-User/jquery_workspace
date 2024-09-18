@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>aj05</title>
+
+    <style>
+        table {
+            width: 900px;
+            border-collapse: collapse;
+        }
+        td {
+            padding-left: 5px;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script defer>
+        console.clear();
+
+        $.ajax('persons.xml', {
+            async: true,
+            cache: false,
+            global: false,
+            crossDomain: true,
+            timeout: 1000,
+
+            type: 'get',
+            dataType: 'xml',
+
+            beforeSend: () => console.debug('beforeHand invoked.'),
+            complete: () => console.debug('complete invoked.'),
+
+            dataFilter: raw => {
+                console.debug('dataFilter invoked.')
+
+                return raw
+            },
+
+            error: () => console.debug('error invoked.'),
+
+            success: (xml) => {
+                console.debug('success invoked.')
+                // console.log('xml:', xml)
+
+                let persons = $(xml).find('person')
+                // console.log(persons instanceof jQuery)  // true
+                console.log(persons.length)
+
+                if(persons.length == 0) return;
+
+                let tbl = $('<table>')
+                    tbl.attr('border', 1)
+
+                // for(let person of persons) {
+                //     console.log(person)
+                // } // for-of
+
+                $.each(persons, (i, p) => {
+                    // console.log(i, p)
+
+                    let id = $(p).find('id').text()
+                    let firstName = $(p).find('first_name').text()
+                    let lastName = $(p).find('last_name').text()
+                    let gender = $(p).find('gender').text()
+                    let email = $(p).find('email').text()
+                    let ipAddress = $(p).find('ip_address').text()
+
+                    let tr = 
+                        $('<tr>').append(
+                            $('<td>').text(id),
+                            $('<td>').text(firstName),
+                            $('<td>').text(lastName),
+                            $('<td>').text(gender),
+                            $('<td>').text(email),
+                            $('<td>').text(ipAddress)
+                        )
+
+                    tbl.append(tr)
+                })
+
+                $('#wrapper').append(tbl)
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+    <h1>aj05.html</h1>
+
+    <hr>
+
+    <div id="wrapper"></div>
+
+</body>
+
+</html>

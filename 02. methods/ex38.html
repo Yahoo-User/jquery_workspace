@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex38</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 300px;
+            height: 200px;
+            margin: 50px auto 0;
+
+            position: relative;
+
+            background-color: #ccc;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+
+            position: absolute;
+            left: 100px;
+            top: 50px;
+            
+            color: white;
+            background-color: #f00;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            var txt1 = $('.txt1 span');
+            var txt2 = $('.txt2 span');
+            var box  = $('.box');
+
+
+            // (method) JQuery.offset(): JQueryCoordinates
+            var boxOffsetTop    = $('.box').offset().top;
+            var boxOffsetLeft   = $('.box').offset().left;
+            
+            console.log(`- boxOffsetTop: ${boxOffsetTop}`);
+            console.log(`- boxOffsetLeft: ${boxOffsetLeft}`);
+
+
+            // (method) JQuery.position(): JQueryCoordinates
+            var boxPositionTop  = $('.box').position().top;
+            var boxPositionLeft = $('.box').position().left;
+            
+            console.log(`- boxPositionTop: ${boxPositionTop}`);
+            console.log(`- boxPositionLeft: ${boxPositionLeft}`);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <div id="container">
+        <p class="box">Box</p>
+    </div>
+
+</body>
+</html>

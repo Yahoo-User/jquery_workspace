@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>31. text</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+
+            var txt = $('#txt');
+            console.debug('txt:', txt, txt[0].constructor.name);    // HTMLParagraphElement
+
+            // ---
+
+            // 1.
+            var oldText = txt.text();
+            console.log(`oldText: ${oldText}`);
+
+            // 2.
+            // var newText = 'Hello';
+            // txt.text(newText);
+
+            // 3.
+            // txt.text(function () {
+            //     return 'Hello, world!!!';
+            // });
+            
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>31. text()</h1>
+
+    <hr>
+    
+    
+    <p id="txt">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+
+
+
+</body>
+
+</html>

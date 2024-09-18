@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex31</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            
+            // (method) JQuery.eq(index: number): JQuery
+
+            //------------------------------------------------------------------------------//
+            // (method) JQuery.is(selector: string): boolean
+            //                   (:[checked | selected | visible | hidden | animated])
+            //------------------------------------------------------------------------------//
+            var result_1 = $('#section1 p').eq(0).is(':visible');
+            console.log(`1. result_1: ${result_1}`);
+
+            var result_2 = $('#section1 p').eq(1).is(':visible');
+            console.log(`2. result_2: ${result_2}`);
+
+            var result_3 = $('#check1').is(':checked');
+            console.log(`3. result_3: ${result_3}`);
+
+            var result_4 = $('#check2').is(':checked');
+            console.log(`4. result_4: ${result_4}`);
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <div id="container">
+        <h1>TITLE</h1>
+
+        <section id="section1">
+            <h2>SUB_TITLE1</h2>
+
+            <p>paragraph_1</p>
+            <p style="display: none;">paragraph_2</p>
+        </section>
+
+        <section id="section2">
+            <h2>SUB_TITLE2</h2>
+
+            <p>
+                <input type="checkbox" name="check1" id="check1" checked><label for="check1">Item1</label>
+                <input type="checkbox" name="check2" id="check2"><label for="check2">Item2</label>
+            </p>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>13. trigger</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(function () {
+            console.clear(); console.group('13. trigger() method.');
+            // -------------------------------------------------------
+            
+            var btn = $('button');
+            console.log(btn, btn[0].constructor.name);      // HTMLButtonElement
+            
+            // ---
+
+            btn.on('click', function (e, arg1, arg2, arg3) {
+                console.debug('Clicked...');
+                console.log('\t+', 'arg1:', arg1, 'arg2:', arg2, 'arg3:', arg3);
+
+            }); // .onclick
+
+            // ---
+
+            setInterval(function () {
+
+                // 1.
+                // btn.trigger('click');
+
+                // 2.
+                // btn.trigger('click', {
+                //     name: 'Yoseph',
+                //     age: 23
+                // }); // .trigger
+
+                // 3.
+                btn.trigger('click', [
+                    1, 2, 3
+                ]);
+                
+            }, 5000);   // setInterval
+
+
+            // -------------------------------------------------------
+            console.groupEnd();
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>13. trigger() method</h1>
+
+    <hr>
+    
+    <button>Click</button>
+
+
+
+</body>
+
+</html>

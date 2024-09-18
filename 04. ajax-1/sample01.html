@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample1</title>
+
+    <style>
+
+        #news3 {
+            width: 500px;
+            height: 400px;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.clear();
+            console.log('jquery started.');
+
+            $('#news1').load('news.html#news1');
+            $('#news2').load('news.html#news2');
+            $('#news3').load('temp.html');
+            
+        }); // jq
+
+    </script>
+</head>
+
+<body>
+    <h1>Load 1</h1>
+    <div id="news1"></div>
+
+    <h1>Load 2</h1>
+    <div id="news2"></div>
+
+    <div id="news3"></div>
+</body>
+
+</html>

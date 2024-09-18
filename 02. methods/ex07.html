@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            console.debug('jq started.');
+
+            // (method) JQuery.css(propertyName: string, value: string | number): JQuery
+            $('h1.tit').css('background-color', '#ff0').css('border', '5px solid purple');
+            $('h3.tit').css('background-color', '#f0f').css('border', '5px solid blue');
+        }); // .jq
+
+    </script>
+</head>
+<body>
+    
+    <h1 class="tit">TITLE1</h1>
+    <h2>TITLE2</h2>
+    <h3 class="tit">TITLE3</h3>
+
+</body>
+</html>

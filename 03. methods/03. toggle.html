@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3. toggle</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js" referrerpolicy="no-referrer"></script>
+
+    
+    <script crossorigin="anonymous">
+
+        $(window).load(function () {
+            console.clear(); console.group('3. toggle() method.');
+            // -------------------------------------------------------
+            
+
+            var img = $('img');
+
+            // ---
+
+            setInterval(function () {
+                console.log('\t+ timed out.');
+
+                // 1.
+                // img.toggle();
+
+                // 2.
+                img.toggle(function () {
+                // img.toggle('slow', function () {
+                // img.toggle('fast', function () {
+                // img.toggle(1000, function () {
+                    console.log('\t+ Done.');
+                }); // .toggle
+
+                // 3.
+                // img.toggle('1000', 'swing', function () {
+                // // img.toggle('1000', 'linear', function () {
+                //     console.log('\t+ Done.');
+                // }); // .toggle
+
+                // 4.
+                // img.toggle(true);
+                // img.toggle(false);
+
+            }, 3000);   // in milliseconds.
+
+
+            // -------------------------------------------------------
+            console.groupEnd();
+        }); // .jq
+
+    </script>
+</head>
+
+<body>
+
+    <h1>3. toggle() method</h1>
+
+    <hr>
+
+    <img src="https://picsum.photos/600/400">
+
+</body>
+
+</html>
